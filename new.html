@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>My Website - Vibrant Banner</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f4f4;
+    }
+
+    header {
+      background: #dd44dd;
+    }
+
+    nav {
+      background: #86187d;
+      padding: 15px 40px;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ec7f37;
+    }
+
+    .google-badge {
+      position: absolute;
+      right: 30px;
+    }
+
+    /* Hamburger menu - hidden on desktop, shown on mobile */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 28px;
+      height: 3px;
+      background: white;
+      margin: 4px 0;
+      transition: 0.3s;
+      border-radius: 2px;
+    }
+
+    /* Hero section */
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      background: white;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    /* new BANNER SECTION - eye-catching & modern */
+    .promo-banner {
+      background: linear-gradient(135deg, #ff9a3c, #ff5a1f);
+      margin: 30px 20px 20px 20px;
+      border-radius: 28px;
+      padding: 20px 30px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s ease, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+
+
+    /* Adding subtle animated shine effect */
+
+
+
+
+    .promo-banner::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 1s;
+    }
+
+    .promo-banner:hover::before {
+      left: 100%;
+    }
+
+    .promo-banner:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .banner-text {
+      flex: 2;
+      padding: 10px;
+    }
+
+    .banner-text h2 {
+      font-size: 28px;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    .banner-text p {
+      font-size: 18px;
+      color: #fff9e8;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    .banner-highlight {
+      font-weight: bold;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4px 12px;
+      border-radius: 40px;
+      display: inline-block;
+      backdrop-filter: blur(2px);
+    }
+
+    .banner-cta {
+      flex: 1;
+      text-align: center;
+    }
+
+    .cta-button {
+      background: white;
+      color: #ff5a1f;
+      border: none;
+      padding: 12px 28px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .cta-button:hover {
+      background: #ffddcc;
+      transform: scale(1.03);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    }
+
+    /* small banner variant - optional second banner (for extra style) */
+
+
+
+    .mini-banner {
+      background: #0d1b3d;
+      margin: 20px 20px 30px 20px;
+      border-radius: 20px;
+      padding: 14px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .mini-banner span {
+      color: #ffdd99;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .mini-banner a {
+      background: #ff5a1f;
+      padding: 8px 18px;
+      border-radius: 40px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+
+    }
+
+    /* ========== NAVBAR ========== */
+
+
+    .navbar {
+      background: #ffffff;
+      padding: 12px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      position: relative;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-box {
+      width: 55px;
+      height: 50px;
+      background: linear-gradient(135deg, #2957ac, #2957ac);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+      box-shadow: 0 4px 10px rgba(255, 90, 31, 0.3);
+    }
+
+    /* ONLY TEXT HOVER */
+
+
+
+    .logo-name {
+      transition: 0.3s;
+    }
+
+    .logo-sub {
+      transition: 0.3s;
+    }
+
+    .logo:hover .logo-name {
+      color: hsl(0, 63%, 51%);
+      letter-spacing: 1px;
+    }
+
+    .logo:hover .logo-sub {
+      color: #ff0080;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #1e293b;
+      font-weight: 700;
+      transition: 0.2s;
+      font-size: 18px;
+    }
+
+    .nav-links a:hover {
+      color: #ff5a1f;
+    }
+
+    .has-dropdown {
+      position: relative;
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 35px;
+      left: 0;
+      background: white;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      padding: 12px 0;
+      min-width: 160px;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.2s;
+      z-index: 10;
+    }
+
+    .has-dropdown:hover .dropdown {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 8px 20px;
+      color: #334155;
+    }
+
+    .gplay-btn {
+      background: #ff5a1f;
+      color: white;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-weight: 600;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .gplay-btn:hover {
+      background: #000000;
+      transform: scale(1.02);
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #076dcc;
+    }
+
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: white;
+      padding: 20px;
+      gap: 15px;
+      border-top: 1px solid #eee;
+    }
+
+    .mobile-menu a {
+      color: #1e293b;
+      font-weight: 600;
+      padding: 8px;
+    }
+
+    @media (max-width: 768px) {
+
+      .nav-links,
+      .gplay-btn {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .navbar {
+        padding: 12px 20px;
+      }
+
+      .mobile-menu.active {
+        display: flex;
+      }
+    }
+
+
+
+    /* HERO SECTION */
+
+
+
+
+    .hero {
+      width: 100%;
+      padding: 80px 8%;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: white;
+    }
+
+    .hero-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero-text h1 {
+      font-size: 55px;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      color: #d1d5db;
+      margin-bottom: 30px;
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      background: #ff6b00;
+      color: white;
+      text-decoration: none;
+      border-radius: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: white;
+      color: #ff6b00;
+      transform: translateY(-3px);
+    }
+
+    .btn2 {
+      background: transparent;
+      border: 2px solid white;
+    }
+
+    .btn2:hover {
+      background: white;
+      color: black;
+    }
+
+    .hero-image {
+      flex: 1;
+      text-align: center;
+      min-width: 300px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 380px;
+      transform: translateX(-80px);
+
+      animation: float 3s ease-in-out infinite;
+    }
+
+
+    .hero-image img:hover {
+      animation-play-state: paused;
+    }
+
+
+    /* ANIMATION */
+
+
+
+
+    @keyframes float {
+
+      0% {
+        transform: translateX(-80px) translateY(0px);
+      }
+
+      50% {
+        transform: translateX(-80px) translateY(-20px);
+      }
+
+      100% {
+        transform: translateX(-80px) translateY(0px);
+      }
+
+
+    }
+
+
+
+    /* MOBILE RESPONSIVE */
+
+
+
+
+
+    @media(min-width:768px) {
+
+      .hero {
+        padding: 80px 8%;
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .hero-text {
+        flex: 1;
+        text-align: left;
+      }
+
+      .hero-buttons {
+        justify-content: flex-start;
+      }
+
+      .hero-image {
+        flex: 1;
+        text-align: right;
+      }
+
+      .hero-image img {
+        max-width: 330px;
+      }
+
+    }
+
+    .about-text h1 {
+      font-size: 45px;
+      line-height: 1.2;
+    }
+
+
+
+
+    @media (max-width:580px) {
+      .hero-text h1 {
+        font-size: 24px;
+        line-height: 1.2;
+      }
+
+    }
+
+    /* SERVICES SECTION */
+
+    .services {
+      width: 100%;
+      padding: 80px 10%;
+      background: #f5f5f5;
+      text-align: center;
+    }
+
+    .services h1 {
+      font-size: 45px;
+      color: #0b1633;
+      margin-bottom: 10px;
+    }
+
+    .service-text {
+      color: rgb(70, 68, 70);
+      margin-bottom: 50px;
+      font-size: 18px;
+    }
+
+    .service-box {
+      display: flex;
+      justify-content: center;
+      gap: 49px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      width: 320px;
+      background: white;
+      padding: 35px 25px;
+      border-radius: 20px;
+      transition: 0.4s;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      background: #0b1633;
+      color: white;
+    }
+
+    .icon {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      margin-top: 15px;
+      margin-bottom: 30px;
+      line-height: 1.7;
+    }
+
+    .card button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      background: #ff6b1a;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .card button:hover {
+      background: white;
+      color: #ff6b1a;
+    }
+
+
+
+    /* ABOUT SECTION */
+
+
+
+
+    .about {
+      width: 100%;
+      padding: 20px 10%;
+      background: #0c1428;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 80px;
+      flex-wrap: wrap;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 320px;
+    }
+
+    .about-text h5 {
+      color: #ff6b00;
+      font-size: 24px;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    .line {
+      width: 60px;
+      height: 4px;
+      background: #ff6b00;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .about-text h1 {
+      font-size: 65px;
+      line-height: 1.2;
+      color: #93a4ca;
+      margin-bottom: 30px;
+    }
+
+    .about-text p {
+      font-size: 22px;
+      line-height: 1.8;
+      color: #ffffff;
+    }
+
+    .about-list {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    .list {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .list span {
+      width: 38px;
+      height: 38px;
+      background: #ff6b00;
+      color: white;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 50%;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .list p {
+      font-size: 20px;
+      color: #eeecec;
+    }
+
+    .about-btn {
+      display: inline-block;
+      padding: 16px 35px;
+      background: #ff6b00;
+      color: white;
+      text-decoration: none;
+      border-radius: 40px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .about-btn:hover {
+      background: #0f172a;
+      transform: translateY(-5px);
+    }
+
+    .about-image {
+      flex: 1;
+      text-align: center;
+      min-width: 320px;
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 400px;
+
+      animation: float 2s ease-in-out infinite;
+    }
+
+
+
+
+    /* HOVER PAR STOP */
+
+
+
+
+
+
+    .about-image img:hover {
+      animation-play-state: paused;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px) {
+
+      .about {
+        padding: 70px 5%;
+        text-align: center;
+      }
+
+      .about-text h1 {
+        font-size: 42px;
+      }
+
+      .about-text p {
+        font-size: 18px;
+      }
+
+      .list {
+        justify-content: center;
+      }
+
+    }
+
+
+
+    /* FEATURES SECTION */
+
+
+
+
+
+    .features {
+      width: 100%;
+      padding: 70px 10% 30px;
+      background: #f5f7fb;
+      text-align: center;
+    }
+
+
+    .features-title h4 {
+      color: #ff6b00;
+      font-size: 22px;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    .features-title h1 {
+      font-size: 55px;
+      color: #0f172a;
+      margin-bottom: 20px;
+    }
+
+    .features-title p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 18px;
+      color: #666;
+      line-height: 1.8;
+    }
+
+    .features-box {
+      margin-top: 70px;
+
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .feature-card {
+      width: 270px;
+      background: white;
+      padding: 40px 30px;
+      border-radius: 20px;
+
+      transition: 0.4s;
+
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      background: #0f172a;
+    }
+
+    .feature-card:hover h2,
+    .feature-card:hover p {
+      color: white;
+    }
+
+    .feature-icon {
+      font-size: 55px;
+      margin-bottom: 20px;
+    }
+
+    .feature-card h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #0f172a;
+    }
+
+    .feature-card p {
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px) {
+
+      .features {
+        padding: 70px 5%;
+      }
+
+      .features-title h1 {
+        font-size: 40px;
+      }
+
+    }
+
+
+    /* ================= SECTION TITLE ================= */
+
+
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h5 {
+      color: orange;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .section-title h2 {
+      font-size: 50px;
+      color: #0b1736;
+    }
+
+    .section-title p {
+      color: gray;
+    }
+
+
+    /* ================= PORTFOLIO ================= */
+
+
+
+    .portfolio {
+      padding: 50px 10%;
+      background: #fff;
+    }
+
+
+    .portfolio-container {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .portfolio-card {
+      width: 320px;
+      height: 230px;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .portfolio-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+
+    .portfolio-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .portfolio-layer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: 0.5s;
+    }
+
+    .portfolio-card:hover .portfolio-layer {
+      opacity: 1;
+    }
+
+    .portfolio-layer h3 {
+      color: #fff;
+      font-size: 30px;
+    }
+
+    /* ================= COUNTER ================= */
+
+
+
+
+    .counter-section {
+      background: #07142d;
+      color: #fff;
+      padding: 80px 10%;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .counter-box h2 {
+      font-size: 55px;
+      color: orange;
+    }
+
+    .counter-box p {
+      font-size: 20px;
+    }
+
+    /* ================= TESTIMONIAL ================= */
+
+
+
+    .testimonial {
+      padding: 100px 10%;
+      background: #f5f5f5;
+    }
+
+    .testimonial-container {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* TESTIMONIAL CARD HOVER */
+
+    .testimonial-card {
+      width: 300px;
+      background: #ffefef;
+      padding: 40px 25px;
+      border-radius: 20px;
+      text-align: center;
+      transition: 0.5s;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+
+
+    /* IMAGE */
+
+
+
+    .testimonial-card img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      transition: 0.5s;
+    }
+
+
+    /* TEXT */
+
+
+    .testimonial-card h3 {
+      color: rgb(14, 3, 3);
+      margin-bottom: 15px;
+    }
+
+    .testimonial-card p {
+      color: #020407;
+      line-height: 1.7;
+      transition: 0.5s;
+    }
+
+
+    /* HOVER EFFECT */
+
+
+
+    .testimonial-card:hover {
+      transform: translateY(-15px) scale(1.03);
+      background: linear-gradient(135deg, #800679, #b64bc0);
+
+    }
+
+
+
+    /* IMAGE HOVER */
+
+
+
+    .testimonial-card:hover img {
+      transform: scale(1.1) rotate(5deg);
+
+      border: 4px solid rgb(255, 255, 255);
+    }
+
+
+    /* TEXT HOVER */
+
+
+
+
+    .testimonial-card:hover p {
+      color: white;
+    }
+
+
+
+    /* ================= CONTACT ================= */
+
+
+
+
+    .contact {
+      padding: 100px 10%;
+      background: #fff;
+    }
+
+    .contact-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .contact form {
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .contact input,
+    .contact textarea {
+      width: 100%;
+      padding: 18px;
+      margin-bottom: 20px;
+      border: none;
+      background: #f1f1f1;
+      border-radius: 12px;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .contact button {
+      background: orange;
+      color: white;
+      border: none;
+      padding: 15px 35px;
+      border-radius: 40px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .contact button:hover {
+      background: #ff5e00;
+    }
+
+
+
+    /* ================= FOOTER ================= */
+
+
+
+    footer {
+      background: #07142d;
+      color: #fff;
+      padding-top: 70px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 0 10% 50px;
+    }
+
+    .footer-box {
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .footer-box h2,
+    .footer-box h3 {
+      margin-bottom: 20px;
+    }
+
+    .footer-box p {
+      line-height: 1.8;
+      color: #ccc;
+    }
+
+    .footer-box a {
+      display: block;
+      color: #ccc;
+      margin-bottom: 12px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .footer-box a:hover {
+      color: rgb(0, 0, 0);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icons a {
+      width: 55px;
+      height: 55px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 50%;
+      color: white;
+      font-size: 22px;
+
+      text-decoration: none;
+      transition: 0.4s;
+    }
+
+
+
+    /* FACEBOOK */
+
+
+
+    .social-icons a:nth-child(1) {
+      background: #1877f2;
+    }
+
+
+    /* INSTAGRAM */
+
+
+    .social-icons a:nth-child(2) {
+      background: linear-gradient(135deg,
+          #feda75,
+          #fa7e1e,
+          #d62976,
+          #962fbf);
+    }
+
+
+    /* TWITTER */
+
+
+    .social-icons a:nth-child(3) {
+      background: #1da1f2;
+    }
+
+
+    /* PINTEREST */
+
+
+    .social-icons a:nth-child(4) {
+      background: #e60023;
+    }
+
+    .social-icons a:nth-child(5) {
+      background: rgb(22, 223, 22);
+    }
+
+
+    .social-icons a:nth-child(6) {
+      background: rgb(13, 85, 192);
+    }
+
+    .social-icons a:nth-child(7) {
+      background: rgb(221, 23, 8);
+    }
+
+
+
+    /* HOVER */
+
+
+    .social-icons a:hover {
+      transform: translateY(-8px) scale(1.1);
+
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      padding: 20px;
+      color: #ccc;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+
+
+    @media(max-width:768px) {
+
+      .section-title h2 {
+        font-size: 35px;
+      }
+
+      .counter-section {
+        gap: 40px;
+      }
+
+      .portfolio-card {
+        width: 100%;
+      }
+
+    }
+    
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <a href="#" class="logo">
+      <div class="logo-box">mwc</div>
+
+      <div>
+        <div class="logo-name">mywebside</div>
+        <div class="logo-sub">Online Platform</div>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+
+      <li class="has-dropdown">
+        <a href="#services">Services ▾</a>
+
+        <div class="dropdown">
+          <a href="#">home </a>
+          <a href="#">Career</a>
+          <a href="#">about</a>
+          <a href="#">Business</a>
+        </div>
+      </li>
+
+
+      <li><a href="#home">home </a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#blogs">Blogs</a></li>
+    </ul>
+
+    <a href="https://play.google.com/store" class="gplay-btn" target="_blank">
+      <i class="fab fa-google-play"></i> Google Play
+    </a>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#">Home</a>
+    <a href="#home">home</a>
+    <a href="#about">about</a>
+    <a href="#products">Procts</a>
+    <a href="#blogs">Blogs</a>
+  </div>
+
+  <!-- ============================================= -->
+  <div class="promo-banner">
+    <div class="banner-text">
+      <h2>🔥 Limited Time Offer! 🔥</h2>
+      <p>Get <span class="banner-highlight">30% OFF</span>my webside </p>
+      <p>✨ Build your dream website with modern HTML/CSS ✨</p>
+    </div>
+    <div class="banner-cta">
+      <a href="#" class="cta-button">Claim Deal →</a>
+    </div>
+  </div>
+
+  <!-- Optional Second Mini Banner (extra promo or info) -->
+  <div class="mini-banner">
+    <span><i class="fas fa-trophy" style="margin-right: 6px;"></i> ⭐ Trusted by 1000+ creators</span>
+    <span><i class="fas fa-rocket"></i> mywebside</span>
+    <a href="#">Learn More →</a>
+  </div>
+
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="hero-text">
+        <h1>Build Your Dream Website 🚀</h1>
+
+        <p>
+          Modern HTML & CSS website design with responsive layout,
+          smooth style and clean UI.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#" class="btn">Get Started</a>
+
+          <a href="#" class="btn btn2">Learn More</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="image/girl.png" alt="">
+      </div>
+  </section>
+
+
+
+
+  <!-- SERVICES SECTION -->
+  <section class="services">
+
+    <h1>Our Services</h1>
+    <p class="service-text">
+      We provide modern and responsive website solutions.
+    </p>
+
+    <div class="service-box">
+
+      <div class="card">
+        <div class="icon">💻</div>
+        <h2>Web Design</h2>
+        <p>Modern and creative website designs for your business.</p>
+        <button>Read More</button>
+      </div>
+
+      <div class="card">
+        <div class="icon">📱</div>
+        <h2>Responsive</h2>
+        <p>Mobile friendly websites that work on every device.</p>
+        <button>Read More</button>
+      </div>
+
+      <div class="card">
+        <div class="icon">⚡</div>
+        <h2>Fast Speed</h2>
+        <p>Optimized websites with fast loading performance.</p>
+        <button>Read More</button>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT SECTION -->
+
+  <section class="about">
+
+    <div class="about-text">
+
+      <h5>ABOUT US</h5>
+
+      <div class="line"></div>
+
+      <h1>
+        We Create Modern <br>
+        Website Experience
+      </h1>
+
+      <p>
+        We build modern and responsive websites with smooth
+        animations, fast loading speed and clean UI design
+        for your business.
+      </p>
+
+      <div class="about-list">
+
+        <div class="list">
+          <span>✓</span>
+          <p>Responsive Design</p>
+        </div>
+
+        <div class="list">
+          <span>✓</span>
+          <p>Clean UI Design</p>
+        </div>
+
+        <div class="list">
+          <span>✓</span>
+          <p>Fast Performance</p>
+        </div>
+
+      </div>
+
+      <a href="#" class="about-btn">Read More</a>
+
+    </div>
+
+    <div class="about-image">
+      <img src="image/ff.png" alt="">
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+
+  <!-- FEATURES SECTION -->
+
+  <section class="features">
+
+    <div class="features-title">
+      <h4>WHY CHOOSE US</h4>
+      <h1>Our Best Features</h1>
+      <p>
+        We provide high quality modern website services
+        with clean UI and smooth experience.
+      </p>
+    </div>
+
+
+
+
+
+
+    <!-- FEATURES SECTION -->
+    <div class="features-box">
+
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+
+        <h2>Fast Loading</h2>
+
+        <p>
+          Super fast websites with optimized performance.
+        </p>
+        <a href="#" class="about-btn">Read More</a>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+
+        <h2>Responsive</h2>
+
+        <p>
+          Mobile friendly websites for every device.
+        </p>
+        <a href="#" class="about-btn">Read More</a>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🎨</div>
+
+        <h2>Modern UI</h2>
+
+        <p>
+          Beautiful and modern user interface design.
+        </p>
+        <a href="#" class="about-btn">Read More</a>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+
+        <h2>Secure</h2>
+
+        <p>
+          Safe and secure website structure for users.
+        </p>
+        <a href="#" class="about-btn">Read More</a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= PORTFOLIO SECTION ================= -->
+
+
+  <section class="portfolio">
+
+    <div class="section-title">
+      <h5>OUR WORK</h5>
+      <h2>Latest Projects</h2>
+      <p>We create modern and beautiful websites with clean UI.</p>
+    </div>
+
+    <div class="portfolio-container">
+
+      <div class="portfolio-card">
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="">
+        <div class="portfolio-layer">
+          <h3>Business Website</h3>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" alt="">
+        <div class="portfolio-layer">
+          <h3>Ecommerce Website</h3>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692" alt="">
+        <div class="portfolio-layer">
+          <h3>Landing Page</h3>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= COUNTER SECTION ================= -->
+
+  <section class="counter-section">
+
+    <div class="counter-box">
+      <h2>500+</h2>
+      <p>Projects Done</p>
+    </div>
+
+    <div class="counter-box">
+      <h2>300+</h2>
+      <p>Happy Clients</p>
+    </div>
+
+    <div class="counter-box">
+      <h2>5+</h2>
+      <p>Years Experience</p>
+    </div>
+
+    <div class="counter-box">
+      <h2>24/7</h2>
+      <p>Support</p>
+    </div>
+
+  </section>
+
+  
+  <!-- ================= TESTIMONIAL SECTION ================= -->
+
+  <section class="testimonial">
+
+    <div class="section-title">
+      <h5>TESTIMONIAL</h5>
+      <h2>What Clients Say</h2>
+    </div>
+
+    <div class="testimonial-container">
+
+      <div class="testimonial-card">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg">
+        <h3>Rahul Sharma</h3>
+        <p>
+          Amazing website design and smooth animations.
+        </p>
+      </div>
+
+      <div class="testimonial-card">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg">
+        <h3>Priya Singh</h3>
+        <p>
+          Very responsive and modern website design.
+        </p>
+      </div>
+
+      <div class="testimonial-card">
+        <img src="https://randomuser.me/api/portraits/men/52.jpg">
+        <h3>Mohit Verma</h3>
+        <p>
+          Fast loading and beautiful UI experience.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CONTACT SECTION ================= -->
+
+  <section class="contact">
+
+    <div class="section-title">
+      <h5>CONTACT US</h5>
+      <h2>Get In Touch</h2>
+    </div>
+
+    <div class="contact-container">
+
+
+
+      <form action="naveensaininaveengmail@gmail.com" method="post" enctype="text/plain">
+
+        <input type="text" placeholder="Your Name">
+
+        <input type="email" placeholder="Your Email">
+
+        <textarea placeholder="Your Message"></textarea>
+
+        <button type="submit">Send Message</button>
+
+      </form>
+
+
+    </div>
+
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="footer-container">
+
+      <!-- FOOTER ABOUT -->
+
+
+      <div class="footer-box">
+
+        <h2>MWC</h2>
+
+        <p>
+          We create modern and responsive websites with smooth UI
+          and premium modern design experience.
+        </p>
+
+      </div>
+      <!-- ================= FOOTER QUICK LINKS ================= -->
+
+
+      <div class="footer-box">
+
+        <h3>Quick Links</h3>
+
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Contact</a>
+
+      </div>
+  
+      <!-- ================= FOOTER FOLLOW US================= -->
+
+      <div class="footer-box">
+
+        <h3>Follow Us</h3>
+
+        <div class="social-icons">
+
+
+          <!-- ================= FOOTER  FACEBOOK ================= -->
+
+
+          <a href="https://facebook.com" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <!-- ================= FOOTER  INSTAGRAM  ================= -->
+
+
+          <a href="https://instagram.com" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <!-- ================= FOOTER  TWITTER  ================= -->
+
+
+          <a href="https://twitter.com" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <!-- ================= FOOTER PINTEREST================= -->
+
+
+          <a href="https://pinterest.com" target="_blank">
+            <i class="fab fa-pinterest-p"></i>
+          </a>
+
+          <a href="https://wa.me/919999999999" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+
+
+
+          <a href="https://linkedin.com" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+
+
+          <a href="https://youtube" target="_blank">
+            <i class="fab fa-youtube"></i>
+          </a>
+
+        </div>
+
+      </div> 
+    </div>
+
+    <div class="footer-bottom">
+
+      <p>© 2026 My Website | All Rights Reserved</p>
+
+    </div>
+
+  </footer>
+
+
+</body> 
+
+</html>

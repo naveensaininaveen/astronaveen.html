@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>naveen.webside </title>
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --orange: #ff6b35;
+      --navy: #1a2340;
+      --accent: #ff5a1f;
+      --dark-bg: #0b1120;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #fff;
+      color: #1e293b;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* ========== NAVBAR ========== */
+    .navbar {
+      background: #ffffff;
+      padding: 12px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      position: relative;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-box {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #ff5a1f, #d43f0c);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: bold;
+      color: white;
+      box-shadow: 0 4px 10px rgba(255, 52, 245, 0.3);
+    }
+
+    .logo-name {
+      color: #0d1b3d;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+    }
+
+    .logo-sub {
+      color: #ff5a1f;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      list-style: none;
+      flex-wrap: nowrap;
+    }
+
+    .nav-links a {
+      display: inline-block;
+    }
+
+    .nav-links a:hover {
+      color: #ff5a1f;
+    }
+
+    .has-dropdown {
+      position: relative;
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 35px;
+      left: 0;
+      background: white;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      padding: 12px 0;
+      min-width: 160px;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.2s;
+      z-index: 10;
+    }
+
+    .has-dropdown:hover .dropdown {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 8px 20px;
+      color: #334155;
+    }
+
+    .gplay-btn {
+      background: #ff5a1f;
+      color: white;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-weight: 600;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .gplay-btn:hover {
+      background: #e14b15;
+      transform: scale(1.02);
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #ff5a1f;
+    }
+
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: white;
+      padding: 20px;
+      gap: 15px;
+      border-top: 1px solid #eee;
+    }
+
+    .mobile-menu a {
+      color: #1e293b;
+      font-weight: 600;
+      padding: 8px;
+    }
+
+    @media (max-width: 768px) {
+
+      .nav-links,
+      .gplay-btn {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .navbar {
+        padding: 12px 20px;
+      }
+
+      .mobile-menu.active {
+        display: flex;
+      }
+    }
+
+
+    /* steps */
+    section h2 {
+      text-align: center;
+      color: #0d1b3d;
+      margin: 50px 0 20px 0;
+      font-size: 34px;
+    }
+
+    .steps-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 30px auto 60px;
+      padding: 0 20px;
+    }
+
+    .step-item {
+      text-align: center;
+    }
+
+    .step-icon {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: #f7632d;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 33px;
+      margin: auto;
+      margin-bottom: 15px;
+      animation: blinkCircle 2s infinite;
+      transition: 0.9s;
+    }
+@keyframes mymove {
+
+    from{
+        left:0px;
+    }
+
+    to{
+        left:30px;
+    }
+}
+    @keyframes blinkCircle {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.5);
+      }
+
+      50% {
+        transform: scale(1.08);
+        box-shadow: 0 0 0 12px rgba(255, 107, 53, 0.2);
+      }
+
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 107, 53, 0);
+      }
+    }
+
+
+
+
+    /* LINE */
+
+    .step-connector {
+      width: 120px;
+      height: 4px;
+      background: #dcdcdc;
+      border-radius: 20px;
+    }
+
+    .hero-section {
+      width: 100%;
+      overflow: hidden;
+    }
+
+
+    .hero-slider {
+      display: flex;
+      height: 110%;
+      animation: slideShow 20s infinite;
+    }
+
+
+    .hero-slide {
+      min-width: 100%;
+      height: 100%;
+    }
+
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ANIMATION */
+    @keyframes slideShow {
+
+      0%,
+      20% {
+        transform: translateX(0);
+      }
+
+      25%,
+      45% {
+        transform: translateX(-100%);
+      }
+
+      50%,
+      70% {
+        transform: translateX(-200%);
+      }
+
+      75%,
+      95% {
+        transform: translateX(-300%);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+    
+
+    /* MOBILE */
+
+    @media(max-width:768px) {
+
+      .hero-section {
+        height: 250px;
+        margin-bottom: 30px;
+      }
+
+    }
+
+
+
+
+    /* WHY SECTION */
+    .why-section {
+      padding: 20px 40px;
+      text-align: center;
+      background: #fefaf8;
+    }
+
+    .why-section h2 {
+      font-size: 44px;
+      margin-bottom: 10px;
+      text-decoration: underline;
+      text-decoration-color: #af08a1;
+      text-underline-offset: 10px;
+    }
+
+    .why-section h3 {
+      font-size: 28px;
+      color: #ff5a1f;
+      margin-bottom: 25px;
+    }
+
+    .why-text {
+      max-width: 1000px;
+      margin: auto;
+      color: #475569;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    .why-row {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 70px;
+      flex-wrap: wrap;
+    }
+
+    .why-box {
+      width: 240px;
+    }
+
+    .why-box h2 {
+      font-size: 72px;
+      color: #062269;
+      margin-bottom: 12px;
+    }
+
+    .why-box p {
+      font-size: 18px;
+      color: #334155;
+    }
+
+    /* SERVICES */
+
+    .services-section {
+      width: 100%;
+      padding: 70px 40px;
+      background: #f5f5f5;
+      position: relative;
+    }
+
+    .services-section h2 {
+      text-align: center;
+      font-size: 48px;
+      color: #8d94a3;
+      margin-bottom: 60px;
+    }
+
+    .services-row {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    /* CARD */
+
+    .service-card {
+      width: 270px;
+      background: #fff;
+      border: 1px solid hsl(0, 0%, 100%);
+      border-radius: 8px;
+      padding: 18px;
+      text-align: center;
+      transition: .4s;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, .08);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+
+    /* IMAGE */
+
+    .service-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    /* TITLE */
+
+    .service-card h3 {
+      margin-top: 20px;
+      color: #ff5a1f;
+      font-size: 28px;
+    }
+
+    /* TEXT */
+
+    .service-card p {
+      margin-top: 25px;
+      color: #9e7777;
+      line-height: 1.8;
+      font-size: 18px;
+    }
+
+    /* BUTTON */
+
+    .service-card a {
+      display: inline-block;
+      margin-top: 25px;
+      background: #ff5a1f;
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 5px;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    .service-card a:hover {
+      background: #d84315;
+    }
+
+    /* SIDE BUTTONS */
+
+    .left-btn,
+    .right-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 60px;
+      height: 60px;
+      border: none;
+      border-radius: 50%;
+      background: #ff5a1f;
+      color: #fff;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .left-btn {
+      left: 10px;
+    }
+
+    .right-btn {
+      right: 10px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px) {
+
+      .services-section {
+        padding: 50px 20px;
+      }
+
+      .services-section h2 {
+        font-size: 34px;
+      }
+
+      .service-card {
+        width: 100%;
+      }
+
+      .left-btn,
+      .right-btn {
+        display: none;
+      }
+
+    }
+
+    /* SERVICES SECTION */
+
+    .services-section {
+      width: 100%;
+      padding: 11px 50px;
+      background: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .services-section h2 {
+      text-align: center;
+      font-size: 35px;
+      color: #0d1b3d;
+      margin-bottom: 50px;
+    }
+
+    /* SCROLL ROW */
+
+    .services-row {
+      display: flex;
+      gap: 25px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      padding: 10px;
+    }
+
+    .services-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* CARD */
+
+    .service-card {
+      min-width: 280px;
+      background: #bebaba;
+      border-radius: 10px;
+      padding: 18px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, .1);
+      flex-shrink: 0;
+      transition: .4s;
+      border: 17px solid #504c4c;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+
+    /* IMAGE */
+
+    .service-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 21px;
+    }
+
+    /* TITLE */
+
+    .service-card h3 {
+      margin-top: 20px;
+      color: #ff5a1f;
+      font-size: 26px;
+    }
+
+    /* TEXT */
+
+    .service-card p {
+      margin-top: 20px;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    /* BUTTON */
+
+    .service-card a {
+      display: inline-block;
+      margin-top: 20px;
+      background: #ce76e1;
+      color: #000000;
+      padding: 12px 22px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .service-card a:hover {
+      background: #fffefd;
+    }
+
+
+
+
+    /* SIDE BUTTONS */
+
+    .left-btn,
+    .right-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 55px;
+      height: 55px;
+      border: none;
+      border-radius: 50%;
+      background: #ff5a1f;
+      color: white;
+      font-size: 25px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .left-btn {
+      left: 10px;
+    }
+
+    .right-btn {
+      right: 10px;
+    }
+
+
+    @media(max-width:768px) {
+
+      .services-section {
+        padding: 20px 12px;
+      }
+
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px) {
+
+      .services-section {
+        padding: 20px 12px 0 0;
+      }
+
+      .services-section h2 {
+        font-size: 32px;
+      }
+
+      .service-card {
+        min-width: 240px;
+      }
+
+      .left-btn,
+      .right-btn {
+        display: none;
+      }
+
+    }
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background: #f5f5f5;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      width: 100%;
+      background: #e6e8eb;
+      color: #000000;
+    }
+
+    /* TOP */
+
+    .footer-top {
+      padding: 20px 60px;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-top p {
+      font-size: 17px;
+    }
+
+    /* SOCIAL */
+
+    .social-icons {
+      display: flex;
+      gap: 18px;
+    }
+
+    .social-icons a {
+      width: 45px;
+      height: 45px;
+
+      background: #3d5c88;
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: #fff;
+      font-size: 20px;
+
+      transition: .3s;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      background: #ff5a1f;
+      transform: translateY(-5px);
+    }
+
+    /* MAIN */
+
+    .footer-main {
+      padding: 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+    }
+
+    /* COLUMN */
+
+    .footer-col h2 {
+      font-size: 22px;
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .footer-col h2::after {
+      content: "";
+      width: 60px;
+      height: 3px;
+      background: #ff5a1f;
+
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+    }
+
+    .footer-col p {
+      color: #000000;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    /* LINKS */
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 15px;
+    }
+
+    .footer-links a {
+      color: #000000;
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    .footer-links a:hover {
+      color: #ff5a1f;
+      padding-left: 6px;
+    }
+
+    /* CONTACT */
+
+    .contact-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 18px;
+      color: #d1d5db;
+    }
+
+    .contact-item i {
+      color: #ff5a1f;
+      margin-top: 3px;
+    }
+
+    /* BUTTON */
+
+    .footer-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 22px;
+      background: #ff5a1f;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: .3s;
+    }
+
+
+    .footer-btn:hover {
+      background: #e14b15;
+    }
+
+    /* BOTTOM */
+
+    .footer-bottom {
+      padding: 20px;
+      text-align: center;
+      background: #0b1120;
+      font-size: 15px;
+      color: #d1d5db;
+    }
+
+    .footer-bottom span {
+      color: #ff5a1f;
+      font-weight: bold;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px) {
+
+      .section-title h2 {
+        font-size: 35px;
+      }
+
+      .counter-section {
+        gap: 40px;
+      }
+
+      .portfolio-card {
+        width: 100%;
+      }
+
+    }
+
+
+    .slider-dots {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      background: #ccc;
+      border-radius: 50%;
+    }
+
+    .active {
+      background: #7b8d82;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav class="navbar">
+
+    <a href="#" class="logo">
+      <div class="logo-box">ST</div>
+
+      <div>
+        <div class="logo-nmae">Synilogic Tech</div>
+        <div class="logo-sub">Online Astrology Platform</div>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+
+      <li class="has-dropdown">
+        <a href="#services">Services ▾</a>
+
+        <div class="dropdown">
+          <a href="#">Health</a>
+          <a href="#">Career</a>
+          <a href="#">Marriage</a>
+          <a href="#">Business</a>
+        </div>
+      </li>
+
+
+      <li><a href="#astrologers">Astrologers</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#blogs">Blogs</a></li>
+    </ul>
+
+    <a href="https://play.google.com/store" class="gplay-btn" target="_blank">
+      <i class="fab fa-google-play"></i> Google Play
+    </a>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#astrologers">Astrologers</a>
+    <a href="#products">Products</a>
+    <a href="#blogs">Blogs</a>
+  </div>
+
+  <!-- HERO BANNER -->
+
+  <div class="hero-section">
+
+    <div class="hero-slider">
+
+      <div class="hero-slide">
+        <img src="image/synilogi.png" alt="image/synilogi.png">
+      </div>
+
+      <div class="hero-slide">
+        <img src="image/synilogic.2.png" alt="image/synilogic.2.png">
+      </div>
+
+      <div class="hero-slide">
+        <img src="image/synilogic.3.png" alt="image/synilogic.3.png">
+      </div>
+
+      <div class="hero-slide">
+        <img src="image/happy.png" alt="image\happy.png">
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- STEPS -->
+
+  <section>
+
+    <h2>3 Easy Steps For Connecting with Astrologer</h2>
+
+    <div class="steps-row">
+
+      <div class="step-item">
+        <div class="step-icon"><i class="fas fa-user-plus"></i></div>
+        <div>Sign Up</div>
+      </div>
+
+      <div class="step-connector"></div>
+
+      <div class="step-item">
+        <div class="step-icon"><i class="fas fa-wallet"></i></div>
+        <div>Wallet Recharge</div>
+      </div>
+
+      <div class="step-connector"></div>
+
+      <div class="step-item">
+        <div class="step-icon"><i class="fas fa-phone"></i></div>
+        <div>Talk To Astrologer</div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  </section>
+  <!-- WHY CHOOSE US SECTION -->
+
+  <section class="why-section">
+
+    <h2>Why Choose Us</h2>
+
+    <h3>A choice that makes difference</h3>
+
+    <p class="why-text">
+      Synilogic Tech is online astrology website that offers online astrology and tarot guidance with the intent to
+      assist people in their lives and mitigate their problems.
+    </p>
+
+    <div class="why-row">
+
+      <div class="why-box">
+        <h2>96+</h2>
+        <p>
+          Years of experience as a Vedic Astrologer and Vastu Consulate.
+        </p>
+      </div>
+
+      <div class="why-box">
+        <h2>52+</h2>
+        <p>
+          Satisfied Customer take service, more are signing up.
+        </p>
+      </div>
+
+      <div class="why-box">
+        <h2>80+</h2>
+        <p>
+          Best Astrologers from India for Online Consultation.
+        </p>
+      </div>
+
+      <div class="why-box">
+        <h2>50+</h2>
+        <p>
+          Nationalities seek my retainer services.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="services-section">
+
+    <h2>Our Services</h2>
+
+
+    <!-- LEFT BUTTON -->
+
+    <button class="left-btn" onclick="scrollLeftCard()">
+      <i class="fas fa-angle-left"></i>
+    </button>
+
+    <!-- RIGHT BUTTON -->
+
+    <button class="right-btn" onclick="scrollRightCard()">
+      <i class="fas fa-angle-right"></i>
+    </button>
+
+    <!-- SCROLL AREA -->
+
+    <div class="services-row" id="servicesRow">
+
+      <!-- CARD -->
+
+      <div class="service-card">
+        <img src="image/astro.jpg">
+        <h3>Career</h3>
+        <p>
+          Choose the exact career path you want.
+        </p>
+        <a href="#">View More ></a>
+      </div>
+
+      <div class="service-card">
+        <img src="image/astro.jpg">
+        <h3>Wealth</h3>
+        <p>
+          Astrology guidance for money issues.
+        </p>
+        <a href="#">View More ></a>
+      </div>
+
+      <div class="service-card">
+        <img src="image/astro.jpg">
+        <h3>Health</h3>
+        <p>
+          Get health solutions through astrology.
+        </p>
+        <a href="#">View More ></a>
+      </div>
+
+      <div class="service-card">
+        <img src="image/astro.jpg">
+        <h3>Divorce</h3>
+        <p>
+          Solve breakup and relationship problems.
+        </p>
+        <a href="#">View More ></a>
+      </div>
+
+
+  </section>
+
+  <!-- FONT AWESOME -->
+
+  <!-- SERVICES SECTION -->
+
+  <section class="services-section">
+
+    <h2>Our Top Astrologers</h2>
+
+    <div class="services-row">
+
+      <!-- CARD 1 -->
+
+      <div class="service-card">
+
+        <img src="image/barmand.avif" alt="">
+
+        <h3>sunil kumar </h3>
+
+        <p>English, Bengali, Hindi, Marathi, Malayalam, Punjabi, Gujarati
+
+        </p>
+
+        <a href="#">View More ></a>
+
+      </div>
+
+      <!-- CARD 2 -->
+
+      <div class="service-card">
+
+        <img src="image/barmand.avif" alt="">
+
+        <h3>Pandit Devy</h3>
+
+        <p>
+          Family Life, Love & Relationship
+          English, Hind
+        </p>
+
+        <a href="#">View More ></a>
+
+      </div>
+
+      <!-- CARD 3 -->
+
+      <div class="service-card">
+
+        <img src="image/barmand.avif" alt="">
+
+        <h3>
+          developer dipesh verified</h3>
+
+        <p>
+          Tamil, Bengali, Marathi
+          Exp: 1 Years
+        </p>
+
+        <a href="#">View More ></a>
+
+      </div>
+
+      <!-- CARD 4 -->
+
+      <div class="service-card">
+
+        <img src="image/barmand.avif" alt="">
+
+        <h3>
+          Astro Sonu </h3>
+
+        <p>
+          Legal Matters
+          English, Hindi
+          Exp: 4 Years
+        </p>
+
+        <a href="#">View More ></a>
+
+      </div>
+
+      <button class="left-btn">
+        <i class="fas fa-angle-left"></i>
+      </button>
+
+      <button class="right-btn">
+        <i class="fas fa-angle-right"></i>
+      </button>
+
+
+
+  </section>
+
+
+  <!-- SERVICES SECTION -->
+
+  <section class="services-section">
+
+    <h2>Our Blogs</h2>
+
+    <div class="services-row">
+
+      <!-- CARD 1 -->
+
+      <div class="service-card">
+
+        <img src="image/ganesh.webp" alt="">
+
+        <h3>Lord Ganesha</h3>
+
+        <p>
+          Lord Ganesha: The 108 Facets of Divine Prosperity,
+        </p>
+
+        <a href="#">View More ></a>
+
+      </div>
+
+      <!-- CARD 2 -->
+
+      <div class="service-card">
+
+        <img src="image/ganesh.webp" alt="">
+
+        <h3>How Planets </h3>
+
+        <p>
+          Lord Ganesha: The 108 Facets of Divine Prosperity, Wisdom, and Guidance
+          1 Year ago
+        </p>
+
+        <a href="#">View More ></a>
+
+      </div>
+
+      <!-- CARD 3 -->
+
+      <div class="service-card">
+
+        <img src="image/ganesh.webp" alt="">
+
+        <h3>Lord Ganesha</h3>
+
+        <p>
+          Based on horoscopes Vedic astrology develops powerful solutions.
+        </p>
+
+        <a href="#">View More ></a>
+
+      </div>
+
+      <!-- CARD 4 -->
+
+      <div class="service-card">
+
+        <img src="image/ganesh.webp" alt="">
+
+        <h3>How Planets</h3>
+
+        <p>
+          Lord Ganesha: The 108 Facets of Divine Prosperity, Wisdom, and Guidance
+          1 Year ago
+        </p>
+
+        <a href="#">View More ></a>
+
+      </div>
+
+
+
+
+
+    </div>
+
+    <!-- SIDE BUTTONS -->
+
+    <button class="left-btn">
+      <i class="fas fa-angle-left"></i>
+    </button>
+
+    <button class="right-btn">
+      <i class="fas fa-angle-right"></i>
+    </button>
+
+  </section>
+
+  <section class="services-section">
+
+    <h2>Products Category fr</h2>
+
+    </div>
+
+
+    <section class="services-section">
+
+
+
+      <div class="services-row">
+
+        <!-- CARD 1 -->
+
+        <div class="service-card">
+
+          <img src="image/maruti.webp" alt="">
+
+          <h3>maruti Rudraksha mala </h3>
+
+          <p>
+            Rudraksha:
+          </p>
+
+          <a href="#">View More ></a>
+
+        </div>
+
+        <!-- CARD 2 -->
+
+        <div class="service-card">
+
+          <img src="image/maruti.webp" alt="">
+
+          <h3>Rudraksha mala </h3>
+
+          <p>
+            Rudraksha
+          </p>
+
+          <a href="#">View More ></a>
+
+        </div>
+
+        <!-- CARD 3 -->
+
+        <div class="service-card">
+
+          <img src="image/maruti.webp" alt="">
+
+          <h3>Rudraksha</h3>
+
+          <p>
+            pavitar Rudraksha mala
+          </p>
+
+          <a href="#">View More ></a>
+
+        </div>
+
+        <!-- CARD 4 -->
+
+        <div class="service-card">
+
+          <img src="image/maruti.webp" alt="">
+
+          <h3>Rudraksha</h3>
+
+          <p> Rudraksha prodact</p>
+
+          <a href="#">View More ></a>
+        </div>
+
+        <!-- SIDE BUTTONS -->
+
+        <button class="left-btn">
+          <i class="fas fa-angle-left"></i>
+        </button>
+
+        <button class="right-btn">
+          <i class="fas fa-angle-right"></i>
+        </button>
+
+    </section>
+
+    <section class="services-section">
+
+      <center>
+        </h1>Our Testimonials</h1>
+      </center>
+
+
+
+
+      <section class="services-section">
+
+        <h2>Our Top Astrologers</h2>
+
+        <div class="services-row">
+
+          <!-- CARD 1 -->
+
+          <div class="service-card">
+
+            <img src="image/rudrakas mala.webp" alt="">
+
+            <h3>sunil kumar </h3>
+
+            <p>English, Bengali, Hindi, Marathi, Malayalam, Punjabi, Gujarati
+
+            </p>
+
+            <a href="#">View More ></a>
+
+          </div>
+
+          <!-- CARD 2 -->
+
+          <div class="service-card">
+
+            <img src="image/rudrakas mala.webp" alt="">
+
+            <h3>preet</h3>
+
+            <p>
+              Relationship
+              English, Hind
+            </p>
+
+            <a href="#">View More ></a>
+
+          </div>
+
+          <!-- CARD 3 -->
+
+          <div class="service-card">
+
+            <img src="image/rudrakas mala.webp" alt="">
+
+            <h3>
+              sonu </h3>
+
+            <p>
+              When calculating the karma and destiy from your bithday and your name advaned
+            </p>
+
+            <a href="#">View More ></a>
+
+          </div>
+
+          <!-- CARD 4 -->
+
+          <div class="service-card">
+
+            <img src="image/rudrakas mala.webp" alt="">
+
+            <h3>mala </h3>
+
+            <p>
+              rudra mala
+            </p>
+
+            <a href="#">View More ></a>
+
+
+          </div>
+
+
+          <button class="left-btn">
+            <i class="fas fa-angle-left"></i>
+          </button>
+
+          <button class="right-btn">
+            <i class="fas fa-angle-right"></i>
+          </button>
+
+      </section>
+
+      <!-- FOOTER -->
+
+      <footer class="footer">
+
+        <!-- TOP -->
+
+        <div class="footer-top">
+
+          <p>Connect with us on social media</p>
+
+          <div class="social-icons">
+
+            <a href="https://instagram.com/sonu" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="fab fa-youtube" target="_blank">
+              <i class="fab fa-youtube"></i>
+            </a>
+
+            <a href="" fab fa-twitter" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- MAIN -->
+
+        <div class="footer-main">
+
+          <!-- COLUMN 1 -->
+
+          <div class="footer-col">
+
+
+            <p>
+              Synilogic Tech is an online astrology platform
+              helping people through astrology and tarot guidance.
+            </p>
+
+            <a href="#" class="footer-btn">Read More</a>
+          </div>
+
+          <!-- COLUMN 2 -->
+
+          <div class="footer-col">
+
+            <h2>Quick Links</h2>
+
+            <ul class="footer-links">
+
+              <li><a href="#">Home</a></li>
+
+              <li><a href="#">Services</a></li>
+
+              <li><a href="#">Astrologers</a></li>
+
+              <li><a href="#">Contact</a></li>
+
+            </ul>
+
+          </div>
+
+          <!-- COLUMN 3 -->
+
+          <div class="footer-col">
+
+            <h2>Services</h2>
+
+            <ul class="footer-links">
+
+              <li><a href="#">Career</a></li>
+
+              <li><a href="#">Health</a></li>
+
+              <li><a href="#">Love Marriage</a></li>
+
+              <li><a href="#">Business</a></li>
+
+            </ul>
+
+          </div>
+
+          <!-- COLUMN 4 -->
+
+          <div class="footer-col">
+
+            <h2>Contact Us</h2>
+
+            <div class="contact-item">
+
+              <i class="fas fa-location-dot"></i>
+
+              <p>Kota, Rajasthan</p>
+
+            </div>
+
+            <div class="contact-item">
+
+              <i class="fas fa-phone"></i>
+
+              <p>+91.........</p>
+
+            </div>
+
+            <div class="contact-item">
+
+              <i class="fas fa-envelope"></i>
+              <p>synilogictech@gmail.com</p>
+
+            </div>
+
+
+          </div>
+          <video controls width="250">
+            <source src="image/12686158_3840_2160_30fps.mp4" type="video/webm" />
+
+            <source src="image/12686158_3840_2160_30fps.mp4" type="video/mp4" />
+
+            Download the
+            <a href="image/12686158_3840_2160_30fps.mp4">WEBM</a>
+            or
+            <a href="image/12686158_3840_2160_30fps.mp4">MP4</a>
+            video.
+          </video>
+
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="footer-bottom">
+          © 2026 <span>Synilogic Tech</span> | All Rights Reserved
+        </div>
+
+
+
+      </footer>
+
+</body>
+
+</html>
