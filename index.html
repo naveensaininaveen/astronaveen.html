@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Royal Hotel</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+font-family:'Poppins',sans-serif;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+.navbar{
+background:#fff;
+padding:15px 0;
+box-shadow:0 2px 15px rgba(0,0,0,.08);
+}
+
+.navbar-brand{
+font-size:28px;
+font-weight:700;
+color:#0f9d92;
+}
+
+.nav-link{
+font-weight:500;
+margin:0 10px;
+}
+
+.book-btn{
+background:#0f9d92;
+color:white;
+border:none;
+padding:10px 22px;
+border-radius:8px;
+}
+
+/* HERO */
+
+.hero-slider img{
+height:90vh;
+object-fit:cover;
+}
+
+.carousel-caption{
+bottom:25%;
+z-index:10;
+}
+
+.carousel-caption h1{
+    color:#ffffff;
+    text-shadow:0 4px 15px rgba(0,0,0,.8);
+}
+
+.carousel-caption p{
+    color:#4915c4;
+    text-shadow:0 2px 10px rgba(0,0,0,.8);
+}
+.hero::before{
+content:'';
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.45);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+color:white;
+}
+
+.hero h1{
+font-size:60px;
+font-weight:700;
+max-width:650px;
+}
+
+.hero p{
+font-size:18px;
+margin-top:15px;
+}
+
+/* SEARCH BOX */
+
+.search-box{
+background:white;
+padding:20px;
+border-radius:12px;
+margin-top:40px;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.search-btn{
+background:#0f9d92;
+color:white;
+width:100%;
+}
+
+/* ABOUT */
+
+.about{
+padding:100px 0;
+}
+
+.about h2{
+font-size:45px;
+font-weight:700;
+}
+
+.about-text{
+color:#666;
+line-height:1.9;
+}
+
+.about-img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:15px;
+}
+
+/* STATS */
+
+.stats{
+margin-top:40px;
+}
+
+.stat-card{
+padding:25px;
+border-radius:15px;
+text-align:center;
+font-weight:600;
+}
+
+.stat-card h3{
+font-weight:700;
+margin-bottom:5px;
+}
+
+.bg1{background:#fff3cd;}
+.bg2{background:#d1f5ea;}
+.bg3{background:#dbeafe;}
+.bg4{background:#eadcff;}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:38px;
+}
+
+.about h2{
+font-size:32px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg sticky-top">
+<div class="container">
+
+<a class="navbar-brand" href="#">
+shree radhe Restaurant.
+</a>
+
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+
+<ul class="navbar-nav mx-auto">
+
+<li class="nav-item">
+<a class="nav-link" href="#">Home</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#">odar</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#">Suites</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#">Offers</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="#contact">Contact</a>
+</li>
+
+</ul>
+
+<a href="booking.html" class="btn btn-warning">
+    Reserve Now
+</a>
+
+</div>
+
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+<div id="heroSlider" class="carousel slide carousel-fade"
+data-bs-ride="carousel"
+data-bs-interval="3000">
+
+<div class="carousel-inner">
+
+<div class="carousel-item active">
+<img src="./image/s1.jpg">
+class="d-block w-100 hero-slider">
+
+<div class="carousel-caption">
+<h1>weg Restaurant</h1>
+<p>kota maa trikuta love khus hospital</p>
+</div>
+</div>
+
+<div class="carousel-item">
+<img src="./image/s1.jpg">
+class="d-block w-100 hero-slider">
+
+<div class="carousel-caption">
+<h1>with family and beautiful Restaurant</h1>
+<p>kota maa trikuta love khus hospital</p>
+</div>
+</div>
+
+<div class="carousel-item">
+<img src="./image/s1.jpg">
+class="d-block w-100 hero-slider">
+
+<div class="carousel-caption">
+<h1>full car parking </h1>
+<p>Best kota Restaurant.</p>
+</div>
+</div>
+
+<
+
+
+
+
+</div>
+
+<button class="carousel-control-prev" type="button"
+data-bs-target="#heroSlider"
+data-bs-slide="prev">
+<span class="carousel-control-prev-icon"></span>
+</button>
+
+<button class="carousel-control-next" type="button"
+data-bs-target="#heroSlider"
+data-bs-slide="next">
+<span class="carousel-control-next-icon"></span>
+</button>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about">
+
+<div class="container">
+
+<div class="row align-items-center">
+
+<div class="col-lg-6">
+
+<h2>
+Har Bite Mein Apnapan Ka Ehsaas
+</h2>
+
+<p class="about-text mt-4">
+
+Shahi Rajasthani Bhojan, Paramparik Swaad aur Atithya ka Adbhut Sangam.
+
+</p>
+
+<button class="btn btn-dark mt-3">
+Read More
+</button>
+
+</div>
+
+<div class="col-lg-6">
+
+
+<img src="./image/s1.jpg">
+class="about-img">
+
+</div>
+
+</div>
+
+<!-- STATS -->
+
+<div class="row stats g-4">
+
+<div class="col-lg-3 col-md-6">
+<div class="stat-card bg1">
+<h3>100K+</h3>
+<p>Happy castmar</p>
+</div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+<div class="stat-card bg2">
+<h3>95+</h3>
+<p>rebular castmar</p>
+</div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+<div class="stat-card bg3">
+<h3>100%</h3>
+<p>food quality</p>
+</div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+<div class="stat-card bg4">
+<h3>428+</h3>
+<p>Positive Reviews</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- PART 2 START -->
+
+
+<style>
+
+.section-title{
+font-size:42px;
+font-weight:700;
+margin-bottom:15px;
+}
+
+.section-subtitle{
+color:#777;
+max-width:650px;
+margin-bottom:50px;
+}
+
+/* FEATURED SUITES */
+
+.featured-suites{
+padding:100px 0;
+background:#fafafa;
+}
+
+.suite-card{
+position:relative;
+overflow:hidden;
+border-radius:20px;
+height:420px;
+}
+
+.suite-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.5s;
+}
+
+.suite-card:hover img{
+transform:scale(1.08);
+}
+
+.suite-overlay{
+position:absolute;
+bottom:20px;
+left:20px;
+right:20px;
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.suite-overlay h4{
+font-weight:700;
+margin-bottom:8px;
+}
+
+/* AMENITIES */
+
+.amenities{
+padding:100px 0;
+}
+
+.custom-tabs{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+margin-bottom:40px;
+}
+
+.custom-tabs button{
+border:none;
+padding:12px 25px;
+border-radius:10px;
+background:#f1f1f1;
+font-weight:600;
+}
+
+.custom-tabs .active{
+background:#0f9d92;
+color:white;
+}
+
+.amenity-gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:15px;
+transition:.4s;
+}
+
+.amenity-gallery img:hover{
+transform:translateY(-5px);
+}
+
+/* IMAGE HOVER */
+
+.zoom{
+overflow:hidden;
+border-radius:15px;
+}
+
+.zoom img{
+transition:.5s;
+}
+
+.zoom:hover img{
+transform:scale(1.08);
+}
+
+</style>
+
+<!-- FEATURED SUITES -->
+
+<section class="featured-suites">
+
+<div class="container">
+
+<h2 class="section-title">
+Hamari Khaas Rajasthani Thaaliyon Ka Swaad Lijiye
+</h2>
+
+<p class="section-subtitle">
+Paramparik swaad, shuddh ingredients aur yaadgaar dining experience ka anand uthaiye.
+</p>
+
+<div class="row g-4">
+
+<div class="col-lg-8">
+
+<div class="suite-card">
+
+<img src="D:\astro\image\s13.jpg">
+
+<div class="suite-overlay">
+<h4>Family Suite</h4>
+<p class="mb-0">
+Spacious suite perfect for families and long stays.
+</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="suite-card">
+
+<img src="D:\astro\image\s5.jpg">
+
+<div class="suite-overlay">
+<h4>Rajasthani Zaika
+</h4>
+<p class="mb-0">
+Parampara Ka Asli Swaad.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- AMENITIES -->
+<section class="amenities">
+
+<div class="container">
+
+<h2 class="section-title">
+Laajawaab Vyanjanon Ka Anand Lijiye
+</h2>
+
+<p class="section-subtitle">
+Behtareen swaad, shandaar mahaul aur uttam seva ka anand lijiye.
+</p>
+<div class="nav nav-pills mb-4">
+
+<button class="nav-link active"
+data-bs-toggle="pill"
+data-bs-target="#rooms">
+remium Menu
+</button>
+
+<button class="nav-link"
+data-bs-toggle="pill"
+data-bs-target="#restaurant">
+Restaurant
+</button>
+
+<button class="nav-link"
+data-bs-toggle="pill"
+data-bs-target="#pool">
+Fast Service
+</button>
+
+<button class="nav-link"
+data-bs-toggle="pill"
+data-bs-target="#gym">
+Fresh Ingredients
+</button>
+
+</div>
+
+<div class="row g-4 amenity-gallery">
+
+<div class="col-lg-4">
+
+<div class="zoom">
+<img src="D:\astro\image\s8.jpg">
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="zoom">
+<img src="D:\astro\image\s6.jpg">
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="zoom">
+<img src="D:\astro\image\s9.jpg">
+</div>
+
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PART 2 END -->
+
+
+
+
+<!-- PART 3 START -->
+
+
+<style>
+
+/* ROOM LISTING */
+
+.rooms{
+padding:100px 0;
+background:#f8f9fa;
+}
+
+.room-card{
+background:#fff;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.4s;
+height:100%;
+}
+
+.room-card:hover{
+transform:translateY(-8px);
+}
+
+.room-card img{
+width:100%;
+height:240px;
+object-fit:cover;
+}
+
+.room-content{
+padding:20px;
+}
+
+.room-price{
+font-size:22px;
+font-weight:700;
+color:#0f9d92;
+}
+
+.room-btn{
+background:#0f9d92;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:8px;
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+padding:100px 0;
+background:#eef4e7;
+}
+
+.testimonial-card{
+background:white;
+padding:30px;
+border-radius:15px;
+height:100%;
+box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+
+.testimonial-card img{
+width:55px;
+height:55px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.client{
+display:flex;
+align-items:center;
+gap:12px;
+margin-top:20px;
+}
+
+/* OFFERS */
+
+.offers{
+padding:100px 0;
+}
+
+.offer-card{
+position:relative;
+overflow:hidden;
+border-radius:20px;
+height:300px;
+}
+
+.offer-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.5s;
+}
+
+.offer-card:hover img{
+transform:scale(1.1);
+}
+
+.offer-overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.35);
+display:flex;
+align-items:end;
+padding:25px;
+}
+
+.offer-overlay h4{
+color:white;
+font-size:28px;
+font-weight:700;
+}
+
+</style>
+
+<!-- ROOM LISTING -->
+
+<section class="rooms">
+
+<div class="container">
+
+<h2 class="section-title">
+Swadisht Bhojan Ka Anokha Anubhav
+</h2>
+
+<p class="section-subtitle">
+Har Thali Mein Pyaar, Parampara Aur Behtareen Swad Ka Ehsaas.
+</p>
+
+<div class="row g-4">
+
+<div class="col-lg-4">
+
+<div class="room-card">
+
+<img src="D:\astro\image\dal.png">
+
+<div class="room-content">
+
+<h4>dal makhni</h4>
+
+<p>
+Punjabi Swad Ka Laajawab Anubhav.e.
+</p>
+
+<div class="d-flex justify-content-between align-items-center">
+
+<span class="room-price">188rup.</span>
+
+
+<a href="#booking" class="btn room-btn">
+    Book Now
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="room-card">
+
+<img src="D:\astro\image\nan.png">
+
+<div class="room-content">
+
+<h4>shi nan </h4>
+
+<p>
+Garam-Garam Naan, Har Vyanjan Ka Perfect Saathi
+</p>
+
+<div class="d-flex justify-content-between align-items-center">
+
+<span class="room-price">??</span>
+
+<a href="#booking" class="btn room-btn">
+    Book Now
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="room-card">
+
+<img src="D:\astro\image\shev.png">
+
+<div class="room-content">
+
+<h4>shev bhaji </h4>
+
+<p>
+doodh aur masaledar sev ka anokha aur yaadgaar swad..
+</p>
+
+<div class="d-flex justify-content-between align-items-center">
+
+<span class="room-price">??</span>
+
+<a href="#booking" class="btn room-btn">
+    Book Now
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section class="testimonials">
+
+<div class="container">
+
+<h2 class="section-title">
+Hamari Safalta Ke Sathi
+</h2>
+
+<p class="section-subtitle">
+Jo swad, seva aur gunvatta ko har din behtar banane mein yogdan dete hain.
+</p>
+
+<div class="row g-4">
+
+<div class="col-lg-4">
+
+<div class="testimonial-card">
+
+<p>
+walcome
+<div class="client">
+
+<img src="D:\astro\image\akhsy.jpg">
+
+<div>
+<strong>akhasy</strong>
+<br>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="testimonial-card">
+
+<p>
+kota best Restaurant
+</p>
+
+<div class="client">
+
+<img src="D:\astro\image\abhi.jpg">
+
+<div>
+<strong>abhishak</strong>
+<br>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="testimonial-card">
+
+<p>
+fast Service
+</p>
+
+<div class="client">
+
+<img src="D:\astro\image\rahul.png">
+
+<div>
+<strong>rahul </strong>
+<br>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+/* NEARBY */
+
+.nearby{
+padding:100px 0;
+background:#f8f9fa;
+}
+
+.near-card{
+background:#0f9d92;
+color:white;
+padding:40px;
+height:100%;
+border-radius:15px;
+}
+
+.near-card ul{
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.near-card li{
+display:flex;
+justify-content:space-between;
+padding:12px 0;
+border-bottom:11px solid rgba(255,255,255,.2);
+}
+
+.map-box iframe{
+width:100%;
+height:100%;
+min-height:420px;
+border:none;
+border-radius:12px;
+}
+
+/* BOOKING */
+.booking{
+    background: linear-gradient(
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0.6)
+    ),
+    url("images/car-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10px 10px;
+}
+
+.py-5{
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+.booking::before{
+content:'';
+position:absolute;
+inset:0;
+background:rgba(10,20,40,.75);
+
+}
+
+.booking .container{
+position:relative;
+z-index:2;
+}
+
+.booking-title{
+color:white;
+font-size:48px;
+font-weight:700;
+}
+
+.booking-form{
+background:white;
+padding:35px;
+border-radius:15px;
+box-shadow:0 15px 40px rgba(0,0,0,.2);
+}
+
+.book-btn2{
+background:#0f9d92;
+color:white;
+border:none;
+padding:12px;
+width:100%;
+border-radius:10px;
+}
+
+/* FOOTER */
+
+.footer{
+background:white;
+padding:35px 0;
+border-top:1px solid #eee;
+}
+
+.footer-logo{
+font-size:28px;
+font-weight:700;
+color:#0f9d92;
+}
+
+.footer-links a{
+text-decoration:none;
+color:#555;
+margin:0 100px;
+}
+
+.footer-links a:hover{
+color:#0f9d92;
+}
+
+/* TOP BUTTON */
+
+.top-btn{
+position:fixed;
+right:20px;
+bottom:20px;
+width:50px;
+height:50px;
+border:none;
+background:#0f9d92;
+color:white;
+border-radius:50%;
+font-size:22px;
+display:none;
+z-index:999;
+}
+
+</style>
+
+<!-- NEARBY -->
+
+<section class="nearby">
+
+<div class="container">
+
+<div class="row g-4">
+
+<div class="col-lg-5">
+
+<div class="near-card">
+
+<h3 class="mb-4">
+What's Nearby
+</h3>
+
+<ul>
+
+<li>
+<span>kota city </span>
+<span>5 KM</span>
+</li>
+
+<li>
+<span>maa trikuta tiraha</span>
+<span> 1.7 kM</span>
+</li>
+
+<li>
+<span>hospital</span>
+<span>2 m</span>
+</li>
+
+<li>
+<span>Railway Station</span>
+<span>5 KM</span>
+</li>
+
+<li>
+<span>Shopping Mall</span>
+<span>5 KM</span>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="col-lg-7">
+
+<div class="map-box">
+
+<iframe
+src="D:\astro\image\s12.jpg">
+</iframe>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- BOOKING -->
+
+
+<section class="booking2" id="booking2">
+
+<div class="container">
+
+<div class="row align-items-center">
+
+<div class="col-lg-6 mb-5">
+
+<h2 class="booking-title">
+Swad Aur Mehmaan Nawazi Ka Behtareen Sangam
+</h2>
+
+<p class="text-white mt-3">
+Har Vyanjan Me Paramparik Swad Aur Gunvatta Ka Vishwas..
+</p>
+
+</div>
+
+<section class="booking" id="booking">
+
+<div class="container">
+
+<div class="row align-items-center">
+
+<div class="col-lg-6 mb-5">
+
+<h2 class="booking-title">
+Aaj Hi Apni Table Book Karein
+</h2>
+
+<p class="text-white mt-3">
+Apne parivaar aur doston ke saath swadisht bhojan ka anand lein. Hamare restaurant mein taza aur lazeez vyanjan aapka intezar kar rahe hain.
+</p>
+
+</div>
+
+<div class="col-lg-6">
+
+<section id="booking2" class="py-5">
+
+<div class="container">
+
+<h2>Abhi Table Reserve Kare</h2>
+
+<form>
+
+<div class="mb-3">
+<input type="text"
+class="form-control"
+placeholder="Aapka Naam">
+</div>
+
+<div class="mb-3">
+<input type="email"
+class="form-control"
+placeholder="Email Address">
+</div>
+
+<div class="mb-3">
+<input type="tel"
+class="form-control"
+placeholder="Mobile Number">
+</div>
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+<input type="text"
+class="form-control"
+placeholder="Booking Ki Date">
+</div>
+
+<div class="col-md-6 mb-3">
+<input type="text"
+class="form-control"
+placeholder="Aane Ka Samay">
+</div>
+
+</div>
+
+<div class="mb-3">
+<select class="form-select">
+<option>Kitne Logo Ke Liye</option>
+<option>2 Logo Ke Liye</option>
+<option>4 Logo Ke Liye</option>
+<option>6 Logo Ke Liye</option>
+<option>8+ Logo Ke Liye</option>
+<option>Family Table</option>
+</select>
+</div>
+
+<button class="btn btn-success w-100">
+Abhi Reservation Kare
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+ <!-- ================= cars bookig ================= -->
+
+<!-- TOP BUTTON -->
+
+<button class="top-btn" id="topBtn">
+↑
+</button>
+</section>
+
+<!-- PART 4 END -->
+
+
+<!-- SPECIAL OFFERS -->
+
+<section class="offers">
+
+<div class="container">
+
+<h2 class="section-title">
+Har Manzil Tak Aaram Aur Vishwas Ke Saath
+</h2>
+
+<p class="section-subtitle">
+Shree Radhe Car Rental ke saath surakshit, aaraamdayak aur yaadgaar safar ka anubhav karein. 🚗✨
+</p>
+
+<div class="row g-4">
+
+<div class="col-lg-6">
+
+<div class="offer-card">
+
+<img src="D:\astro\image\ccars0.png">
+
+<div class="offer-overlay">
+
+<h4>
+available Luxury cars
+</h4>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-6">
+
+<div class="offer-card">
+
+<img src="D:\astro\image\carsC.png">
+
+<div class="offer-overlay">
+
+<h4>
+self drive
+</h4>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- AMENITIES -->
+<section class="amenities">
+
+<div class="container">
+
+<h2 class="section-title">
+Laajawaab Vyanjanon Ka Anand Lijiye
+</h2>
+
+<p class="section-subtitle">
+Behtareen swaad, shandaar mahaul aur uttam seva ka anand lijiye.
+</p>
+<div class="nav nav-pills mb-4">
+
+<button class="nav-link active"
+data-bs-toggle="pill"
+data-bs-target="#rooms">
+remium Menu
+</button>
+
+<button class="nav-link"
+data-bs-toggle="pill"
+data-bs-target="#restaurant">
+Restaurant
+</button>
+
+<button class="nav-link"
+data-bs-toggle="pill"
+data-bs-target="#pool">
+Fast Service
+</button>
+
+<button class="nav-link"
+data-bs-toggle="pill"
+data-bs-target="#gym">
+Fresh Ingredients
+</button>
+
+</div>
+
+<div class="row g-4 amenity-gallery">
+
+<div class="col-lg-4">
+
+<div class="zoom">
+<img src="D:\astro\image\s8.jpg">
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="zoom">
+<img src="D:\astro\image\s6.jpg">
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="zoom">
+<img src="D:\astro\image\s9.jpg">
+</div>
+
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+     
+<!-- PART 3 END -->
+
+
+<!-- PART 4 START -->
+
+<section class="booking" id="booking">
+
+<div class="container">
+
+<div class="row align-items-center">
+
+<div class="col-lg-6 mb-5">
+
+<h2 class="booking-title">
+Aaj Hi Apni Self Drive Car Book Karein
+</h2>
+
+<p class="text-white mt-3">
+Hamare premium vehicles mein se apni pasand ki car chunen aur Shree Radhe Car Rental ke saath surakshit, aaraamdayak aur bina kisi pareshani ke yatra ka anand lein..
+</p>
+
+</div>
+
+<div class="col-lg-6">
+
+<section id="booking" class="py-5">
+
+<div class="container">
+
+<h2>Reserve Your Car Now</h2>
+
+<form>
+
+<div class="mb-3">
+<input type="text"
+class="form-control"
+placeholder="Full Name">
+</div>
+
+<div class="mb-3">
+<input type="email"
+class="form-control"
+placeholder="Email Address">
+</div>
+
+<div class="mb-3">
+<input type="tel"
+class="form-control"
+placeholder="Mobile Number">
+</div>
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+<input type="text"
+class="form-control">
+</div>
+
+<div class="col-md-6 mb-3">
+<input type="text"
+class="form-control">
+</div>
+
+</div>
+
+<div class="mb-3">
+<select class="form-select">
+<option>Select Vehicle</option>
+<option>Toyota Innova Crysta</option>
+<option>Toyota Fortuner</option>
+<option>Toyota Camry</option>
+<option>Mahindra Scorpio N</option>
+<option>Mahindra Thar</option>
+</select>
+</div>
+
+<button class="btn btn-primary w-100">
+Book Now
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="container">
+
+<div class="row align-items-center">
+
+<div class="col-lg-4">
+<div class="footer-logo">
+Shree Radhe Car Rental
+</div>
+</div>
+
+<div class="col-lg-4 text-center footer-links">
+
+<a href="#">Home</a>
+<a href="#">Vehicles</a>
+<a href="#">Self Drive</a>
+<a href="#">Contact</a>
+
+</div>
+
+<div class="col-lg-4 text-lg-end text-center">
+
+📞 +91 8955297682
+
+<br>
+
+© 2026 Shree Radhe Car Rental
+
+</div>
+
+</div>
+
+</div>
+     
+</footer>
+
+<button class="top-btn" id="topBtn">
+↑
+</button>
+
+</body>
+</html>
