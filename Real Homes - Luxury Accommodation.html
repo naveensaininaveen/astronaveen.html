@@ -1,0 +1,1819 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)file:///D:/astro/New%20folder/luxury-hotel-website.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real Homes - Luxury Accommodation</title>
+<link href="./Real Homes - Luxury Accommodation_files/css2" rel="stylesheet">
+<style>
+  :root {
+    --teal: #2ab3a3;
+    --teal-dark: #1e8c80;
+    --teal-light: #e8f8f6;
+    --gold: #f5a623;
+    --dark: #1a1a2e;
+    --gray: #6b7280;
+    --light-gray: #f8f9fa;
+    --white: #ffffff;
+    --text: #2d3748;
+    --border: #e2e8f0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ========= NAVBAR ========= */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s ease;
+  }
+
+  nav.scrolled {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark);
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--teal);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray);
+    text-decoration: none;
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left: 0; right: 0;
+    height: 2px;
+    background: var(--teal);
+    transform: scaleX(0);
+    transition: transform 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--teal); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .btn-outline {
+    padding: 8px 18px;
+    border: 1.5px solid var(--teal);
+    color: var(--teal);
+    background: transparent;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+  }
+  .btn-outline:hover { background: var(--teal); color: white; }
+
+  .btn-primary {
+    padding: 8px 20px;
+    background: var(--teal);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+  }
+  .btn-primary:hover { background: var(--teal-dark); transform: translateY(-1px); }
+
+  /* ========= HERO ========= */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #1a3a4a 0%, #2d5a6b 40%, #1a4a3a 100%);
+  }
+
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1600&q=80') center/cover no-repeat;
+    opacity: 0.45;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(10,20,30,0.75) 0%, rgba(10,20,30,0.3) 60%, transparent 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    padding-top: 68px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(42,179,163,0.2);
+    border: 1px solid rgba(42,179,163,0.5);
+    color: #7eddd5;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    animation: fadeInDown 0.8s ease forwards;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 62px);
+    font-weight: 700;
+    color: white;
+    line-height: 1.15;
+    max-width: 620px;
+    margin-bottom: 20px;
+    animation: fadeInDown 0.8s ease 0.1s both;
+  }
+
+  .hero p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    max-width: 480px;
+    line-height: 1.7;
+    margin-bottom: 36px;
+    animation: fadeInDown 0.8s ease 0.2s both;
+  }
+
+  /* Search Bar */
+  .search-bar {
+    background: white;
+    border-radius: 12px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    max-width: 680px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    animation: fadeInUp 0.8s ease 0.3s both;
+  }
+
+  .search-field {
+    flex: 1;
+    padding: 10px 16px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    border-right: 1px solid var(--border);
+  }
+
+  .search-field:last-of-type { border-right: none; }
+
+  .search-field::placeholder { color: #aaa; }
+
+  .search-btn {
+    background: var(--teal);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: 'Inter', sans-serif;
+    white-space: nowrap;
+  }
+  .search-btn:hover { background: var(--teal-dark); }
+
+  /* Scroll indicator */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.6);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
+  }
+
+  .scroll-indicator span {
+    width: 1px;
+    height: 32px;
+    background: rgba(255,255,255,0.4);
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* ========= SECTION STYLES ========= */
+  section { padding: 80px 0; }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .section-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 3vw, 38px);
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .section-subtitle {
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.7;
+    max-width: 520px;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+  }
+
+  /* ========= ABOUT / HOSPITALITY ========= */
+  .about-section { background: white; }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .about-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 220px 220px;
+    gap: 12px;
+    position: relative;
+  }
+
+  .about-img {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .about-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .about-img:hover img { transform: scale(1.05); }
+
+  .about-img:first-child {
+    grid-row: span 2;
+  }
+
+  .brand-watermark {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    font-weight: 700;
+    color: rgba(42,179,163,0.08);
+    pointer-events: none;
+    line-height: 1;
+  }
+
+  .stats-row {
+    display: flex;
+    gap: 0;
+    margin-top: 32px;
+  }
+
+  .stat-item {
+    flex: 1;
+    padding: 20px 16px;
+    border-left: 3px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  .stat-item:first-child { padding-left: 0; }
+
+  .stat-item:hover { border-left-color: var(--teal); }
+
+  .stat-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .stat-icon { font-size: 20px; margin-right: 6px; }
+
+  .stat-label {
+    font-size: 12px;
+    color: var(--gray);
+    margin-top: 4px;
+  }
+
+  .stat-item[data-color="teal"] .stat-value { color: var(--teal); }
+  .stat-item[data-color="gold"] .stat-value { color: var(--gold); }
+  .stat-item[data-color="purple"] .stat-value { color: #8b5cf6; }
+
+  /* ========= FEATURED SUITES ========= */
+  .suites-section { background: var(--light-gray); }
+
+  .suites-slider {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    position: relative;
+  }
+
+  .suite-card {
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    height: 360px;
+    cursor: pointer;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .suite-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+  }
+
+  .suite-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .suite-card:hover img { transform: scale(1.05); }
+
+  .suite-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 50%);
+  }
+
+  .suite-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--teal);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .suite-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px;
+    color: white;
+  }
+
+  .suite-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .suite-price {
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 12px;
+  }
+
+  .suite-amenities {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .suite-amenity {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .slider-controls {
+    display: flex;
+    gap: 8px;
+  }
+
+  .slider-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border);
+    background: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: all 0.2s;
+    color: var(--gray);
+  }
+  .slider-btn:hover { background: var(--teal); color: white; border-color: var(--teal); }
+
+  /* ========= AMENITIES ========= */
+  .amenities-section { background: white; }
+
+  .amenity-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+
+  .amenity-tab {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1.5px solid var(--border);
+    background: white;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray);
+    font-family: 'Inter', sans-serif;
+  }
+
+  .amenity-tab.active {
+    background: var(--teal);
+    color: white;
+    border-color: var(--teal);
+  }
+
+  .amenity-tab:hover:not(.active) { border-color: var(--teal); color: var(--teal); }
+
+  .amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .amenity-card {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    height: 220px;
+    cursor: pointer;
+  }
+
+  .amenity-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+  .amenity-card:hover img { transform: scale(1.08); }
+
+  .amenity-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 100%);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  /* ========= ROOM LISTINGS ========= */
+  .rooms-section { background: var(--light-gray); }
+
+  .rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .room-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: all 0.3s;
+  }
+
+  .room-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+  }
+
+  .room-img {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .room-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+  .room-card:hover .room-img img { transform: scale(1.05); }
+
+  .room-price-tag {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: white;
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 16px;
+    padding: 4px 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+
+  .room-body { padding: 20px; }
+
+  .room-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+
+  .room-desc {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  .room-features {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .room-feature {
+    font-size: 11px;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .btn-book {
+    width: 100%;
+    padding: 11px;
+    background: var(--teal);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: 'Inter', sans-serif;
+  }
+  .btn-book:hover { background: var(--teal-dark); }
+
+  /* ========= TESTIMONIALS ========= */
+  .testimonials-section { background: #f0faf9; }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .testimonial-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.3s;
+  }
+
+  .testimonial-card:hover { transform: translateY(-4px); }
+
+  .stars {
+    color: var(--gold);
+    font-size: 14px;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+
+  .testimonial-text {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .reviewer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .reviewer-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--teal-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--teal);
+    font-size: 16px;
+  }
+
+  .reviewer-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--dark);
+  }
+
+  .reviewer-role { font-size: 12px; color: var(--gray); }
+
+  /* ========= SPECIAL OFFERS ========= */
+  .offers-section { background: white; }
+
+  .offers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .offer-card {
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    height: 260px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+
+  .offer-card:hover { transform: scale(1.02); }
+
+  .offer-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .offer-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+  }
+
+  .offer-tag {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: var(--gold);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .offer-info {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    color: white;
+  }
+
+  .offer-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .offer-info p { font-size: 13px; color: rgba(255,255,255,0.8); }
+
+  /* ========= NEARBY MAP ========= */
+  .nearby-section { background: var(--light-gray); }
+
+  .nearby-grid {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .nearby-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  .nearby-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .nearby-list { list-style: none; }
+
+  .nearby-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+
+  .nearby-item:last-child { border-bottom: none; }
+
+  .nearby-place { color: var(--text); font-weight: 500; }
+  .nearby-dist { color: var(--gray); font-size: 13px; }
+
+  .map-placeholder {
+    background: linear-gradient(135deg, #e8f5e9 0%, #e0f2f1 100%);
+    border-radius: 16px;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--gray);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .map-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://maps.googleapis.com/maps/api/staticmap?center=New+York&zoom=13&size=600x300&key=demo') center/cover no-repeat;
+    opacity: 0.3;
+  }
+
+  .map-pin {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: var(--teal);
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 2px 8px rgba(42,179,163,0.5);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(42,179,163,0.4); }
+    50% { box-shadow: 0 0 0 12px rgba(42,179,163,0); }
+  }
+
+  /* ========= CTA / BOOKING ========= */
+  .cta-section {
+    background: linear-gradient(135deg, #0d2d3a 0%, #1a4a3a 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1600&q=80') center/cover;
+    opacity: 0.12;
+  }
+
+  .cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+  }
+
+  .cta-left h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .cta-left p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+
+  .cta-features {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cta-feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255,255,255,0.85);
+    font-size: 14px;
+  }
+
+  .cta-feature-icon {
+    width: 28px;
+    height: 28px;
+    background: rgba(42,179,163,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .booking-form {
+    background: white;
+    border-radius: 20px;
+    padding: 36px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+  }
+
+  .booking-form h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 24px;
+  }
+
+  .form-group { margin-bottom: 16px; }
+
+  .form-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-input:focus { border-color: var(--teal); }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .btn-submit {
+    width: 100%;
+    padding: 14px;
+    background: var(--teal);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+    margin-top: 8px;
+  }
+  .btn-submit:hover { background: var(--teal-dark); transform: translateY(-2px); }
+
+  /* ========= FOOTER ========= */
+  footer {
+    background: #0d1117;
+    color: rgba(255,255,255,0.7);
+    padding: 60px 0 0;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+
+  .footer-brand .logo { color: white; margin-bottom: 14px; display: inline-flex; }
+
+  .footer-desc {
+    font-size: 13px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 20px;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 10px;
+  }
+
+  .social-link {
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+  .social-link:hover { background: var(--teal); color: white; }
+
+  .footer-col h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-col ul li a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: var(--teal); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  .footer-bottom-links { display: flex; gap: 20px; }
+  .footer-bottom-links a { color: rgba(255,255,255,0.35); text-decoration: none; }
+  .footer-bottom-links a:hover { color: var(--teal); }
+
+  /* ========= ANIMATIONS ========= */
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* ========= MOBILE NAV ========= */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: white;
+    border-bottom: 1px solid var(--border);
+    padding: 20px 24px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  .mobile-menu.open { display: block; }
+
+  .mobile-menu .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  @media (max-width: 900px) {
+    .hamburger { display: flex; }
+    .nav-links, .nav-actions { display: none; }
+    .about-grid, .suites-slider, .cta-grid, .offers-grid { grid-template-columns: 1fr; }
+    .testimonials-grid, .rooms-grid, .amenities-grid { grid-template-columns: 1fr 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .nearby-grid { grid-template-columns: 1fr; }
+    .search-bar { flex-direction: column; }
+    .search-field { border-right: none; border-bottom: 1px solid var(--border); }
+  }
+
+  @media (max-width: 600px) {
+    .testimonials-grid, .rooms-grid, .amenities-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    section { padding: 56px 0; }
+  }
+
+  /* Toast notification */
+  .toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--teal);
+    color: white;
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 8px 24px rgba(42,179,163,0.4);
+    z-index: 9999;
+    transform: translateY(80px);
+    opacity: 0;
+    transition: all 0.3s;
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
+</style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar" class="scrolled">
+  <div class="nav-inner">
+    <a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#" class="logo">
+      <div class="logo-icon">🏠</div>
+      Real Homes
+    </a>
+    <ul class="nav-links">
+      <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#about">About</a></li>
+      <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#suites">Suites</a></li>
+      <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#amenities">Amenities</a></li>
+      <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#rooms">Rooms</a></li>
+      <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#offers">Offers</a></li>
+      <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <span style="font-size:13px;color:#555;">📞 +1 800 123 4567</span>
+      <button class="btn-primary" onclick="document.getElementById(&#39;booking&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Reserve Now</button>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <ul class="nav-links">
+    <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#about" onclick="closeMenu()">About</a></li>
+    <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#suites" onclick="closeMenu()">Suites</a></li>
+    <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#amenities" onclick="closeMenu()">Amenities</a></li>
+    <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#rooms" onclick="closeMenu()">Rooms</a></li>
+    <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#offers" onclick="closeMenu()">Offers</a></li>
+    <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#contact" onclick="closeMenu()">Contact</a></li>
+    <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#booking" onclick="closeMenu()">Reserve Now</a></li>
+  </ul>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">⭐ Award Winning Luxury</div>
+    <h1>Discover the Art of Luxury Accommodation</h1>
+    <p>Experience world-class hospitality where every detail is crafted to perfection. Your extraordinary stay begins here.</p>
+    <div class="search-bar">
+      <input type="text" class="search-field" placeholder="📍 Destination">
+      <input type="date" class="search-field">
+      <input type="date" class="search-field">
+      <button class="search-btn" onclick="showToast(&#39;Searching available rooms...&#39;)">Search</button>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span></span>
+    Scroll
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-images reveal visible">
+        <div class="about-img">
+         q
+        <div class="about-img">
+          <img src="./Real Homes - Luxury Accommodation_files/photo-1445019980597-93fa8acb246c" alt="Hotel lobby">
+        </div>
+        <div class="about-img">
+          <img src="./Real Homes - Luxury Accommodation_files/photo-1571003123894-1f0594d2b5d9" alt="Dining">
+        </div>
+        <div class="brand-watermark">RH</div>
+      </div>
+      <div class="reveal reveal-delay-1 visible">
+        <div class="section-eyebrow">About Us</div>
+        <h2 class="section-title">Where Hospitality Meets Your Dreams</h2>
+        <p class="section-subtitle">At Real Homes, we believe in the pursuit of exceptional experiences. With a passion for hospitality, we strive to create moments that linger long in your heart and mind.</p>
+        <div class="stats-row">
+          <div class="stat-item" data-color="gold">
+            <div class="stat-value"><span class="stat-icon">⭐</span><span class="count-up" data-target="100">100</span>K+</div>
+            <div class="stat-label">Happy Guests</div>
+          </div>
+          <div class="stat-item" data-color="teal">
+            <div class="stat-value"><span class="stat-icon">🏨</span><span class="count-up" data-target="120">120</span>+</div>
+            <div class="stat-label">Locations</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value"><span class="stat-icon">🏆</span><span class="count-up" data-target="50">50</span>+</div>
+            <div class="stat-label">Awards Won</div>
+          </div>
+          <div class="stat-item" data-color="purple">
+            <div class="stat-value"><span class="stat-icon">🌍</span><span class="count-up" data-target="428">428</span>+</div>
+            <div class="stat-label">Countries</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ===== FEATURED SUITES ===== -->
+<section class="suites-section" id="suites">
+  <div class="container">
+    <div class="section-header reveal visible">
+      <div>
+        <div class="section-eyebrow">Featured</div>
+        <h2 class="section-title">Immerse Yourself in Our Featured Suites</h2>
+        <p class="section-subtitle">Experience luxury redefined. Our featured suites combine elegant design with unparalleled comfort to ensure your stay is truly extraordinary.</p>
+      </div>
+      <div class="slider-controls">
+        <button class="slider-btn" onclick="rotateSuites(-1)">‹</button>
+        <button class="slider-btn" onclick="rotateSuites(1)">›</button>
+      </div>
+    </div>
+    <div class="suites-slider reveal visible">
+      <div class="suite-card">
+        <img src="./Real Homes - Luxury Accommodation_files/photo-1631049307264-da0ec9d70304" alt="Family Suite">
+        <div class="suite-overlay"></div>
+        <div class="suite-badge">Most Popular</div>
+        <div class="suite-info">
+          <div class="suite-name">Family Suite</div>
+          <div class="suite-price">From $299/night</div>
+          <div class="suite-amenities">
+            <span class="suite-amenity">🛏 2 Bedrooms</span>
+            <span class="suite-amenity">🛁 Jacuzzi</span>
+            <span class="suite-amenity">🌊 Ocean View</span>
+            <span class="suite-amenity">🍳 Kitchen</span>
+          </div>
+        </div>
+      </div>
+      <div class="suite-card">
+        <img src="./Real Homes - Luxury Accommodation_files/photo-1582719478250-c89cae4dc85b" alt="Presidential Suite">
+        <div class="suite-overlay"></div>
+        <div class="suite-badge">Premium</div>
+        <div class="suite-info">
+          <div class="suite-name">Presidential Suite</div>
+          <div class="suite-price">From $899/night</div>
+          <div class="suite-amenities">
+            <span class="suite-amenity">👑 3 Bedrooms</span>
+            <span class="suite-amenity">🍸 Private Bar</span>
+            <span class="suite-amenity">🏊 Pool Access</span>
+            <span class="suite-amenity">🚗 Chauffeur</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AMENITIES ===== -->
+<section class="amenities-section" id="amenities">
+  <div class="container">
+    <div class="section-header reveal visible">
+      <div>
+        <div class="section-eyebrow">Amenities</div>
+        <h2 class="section-title">Indulge in a Suite of Luxurious Amenities</h2>
+        <p class="section-subtitle">Pamper yourself with our world-class amenities that enhance your stay and provide the perfect balance of relaxation and activity.</p>
+      </div>
+      <div class="slider-controls">
+        <button class="slider-btn">‹</button>
+        <button class="slider-btn">›</button>
+      </div>
+    </div>
+    <div class="amenity-tabs reveal visible">
+      <button class="amenity-tab active" onclick="setAmenityTab(this)">💆 Spa &amp; Wellness</button>
+      <button class="amenity-tab" onclick="setAmenityTab(this)">🍽 Restaurant</button>
+      <button class="amenity-tab" onclick="setAmenityTab(this)">🏊 Swimming Pool</button>
+      <button class="amenity-tab" onclick="setAmenityTab(this)">💪 Gym &amp; Fitness</button>
+    </div>
+    <div class="amenities-grid reveal visible">
+      <div class="amenity-card">
+        <img src="./Real Homes - Luxury Accommodation_files/photo-1544161515-4ab6ce6db874" alt="Spa">
+        <div class="amenity-label">Signature Massage</div>
+      </div>
+      <div class="amenity-card">
+        <img src="./Real Homes - Luxury Accommodation_files/photo-1571019614242-c5c5dee9f50b" alt="Wellness">
+        <div class="amenity-label">Aromatherapy</div>
+      </div>
+      <div class="amenity-card">
+        <img src="./Real Homes - Luxury Accommodation_files/photo-1540555700478-4be289fbecef" alt="Relaxation">
+        <div class="amenity-label">Full Body Treatment</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ROOM LISTINGS ===== -->
+<section class="rooms-section" id="rooms">
+  <div class="container">
+    <div class="section-header reveal visible">
+      <div>
+        <div class="section-eyebrow">Rooms</div>
+        <h2 class="section-title">Our Exquisite Room Listings Await</h2>
+        <p class="section-subtitle">Luxurious and stylish rooms for every need, where every detail is designed to delight your senses and ensure absolute comfort.</p>
+      </div>
+      <div class="slider-controls">
+        <button class="slider-btn">‹</button>
+        <button class="slider-btn">›</button>
+      </div>
+    </div>
+    <div class="rooms-grid">
+      <div class="room-card reveal visible">
+        <div class="room-img">
+          <img src="./Real Homes - Luxury Accommodation_files/photo-1631049307264-da0ec9d70304(1)" alt="Twin Room">
+          <div class="room-price-tag">$92</div>
+        </div>
+        <div class="room-body">
+          <div class="room-name">Twin Room</div>
+          <div class="room-desc">Elegant and comfortable twin room with premium furnishings and stunning views.</div>
+          <div class="room-features">
+            <span class="room-feature">🛏 2 Beds</span>
+            <span class="room-feature">📶 Free WiFi</span>
+            <span class="room-feature">❄️ AC</span>
+            <span class="room-feature">🚿 En-suite</span>
+          </div>
+          <button class="btn-book" onclick="showToast(&#39;Redirecting to booking...&#39;)">Book Availability</button>
+        </div>
+      </div>
+      <div class="room-card reveal reveal-delay-1 visible">
+        <div class="room-img">
+          <img src="./Real Homes - Luxury Accommodation_files/photo-1582719478250-c89cae4dc85b(1)" alt="Deluxe Room">
+          <div class="room-price-tag">$72</div>
+        </div>
+        <div class="room-body">
+          <div class="room-name">Deluxe Room</div>
+          <div class="room-desc">Welcome to our Deluxe Room, where luxury meets comfort in a beautifully appointed space.</div>
+          <div class="room-features">
+            <span class="room-feature">🛏 King Bed</span>
+            <span class="room-feature">🛁 Bathtub</span>
+            <span class="room-feature">🌊 Sea View</span>
+            <span class="room-feature">🍽 Breakfast</span>
+          </div>
+          <button class="btn-book" onclick="showToast(&#39;Redirecting to booking...&#39;)">Check Availability</button>
+        </div>
+      </div>
+      <div class="room-card reveal reveal-delay-2 visible">
+        <div class="room-img">
+          <img src="./Real Homes - Luxury Accommodation_files/photo-1540518614846-7eded433c457" alt="Twin Room">
+          <div class="room-price-tag">$85</div>
+        </div>
+        <div class="room-body">
+          <div class="room-name">Twin Room Plus</div>
+          <div class="room-desc">Experience elevated comfort in our Plus Twin Room with upgraded amenities throughout.</div>
+          <div class="room-features">
+            <span class="room-feature">🛏 2 Beds</span>
+            <span class="room-feature">☕ Kitchenette</span>
+            <span class="room-feature">📺 Smart TV</span>
+            <span class="room-feature">🧴 Toiletries</span>
+          </div>
+          <button class="btn-book" onclick="showToast(&#39;Redirecting to booking...&#39;)">Book Availability</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials-section" id="reviews">
+  <div class="container">
+    <div class="section-header reveal visible">
+      <div>
+        <div class="section-eyebrow">Reviews</div>
+        <h2 class="section-title">Every Stay Has a Story</h2>
+        <p class="section-subtitle">Hear from our valued guests about their unforgettable experiences at Real Homes.</p>
+      </div>
+      <div class="slider-controls">
+        <button class="slider-btn">‹</button>
+        <button class="slider-btn">›</button>
+      </div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal visible">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Our stay was absolutely breathtaking. From the moment we arrived, the staff treated us like royalty. The suite was immaculate and the amenities were beyond expectations. Will definitely return!"</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">NA</div>
+          <div>
+            <div class="reviewer-name">Nalia Adam</div>
+            <div class="reviewer-role">Business Traveler</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-1 visible">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"The most memorable experience I've had in a hotel. The personalized service was exceptional and the attention to detail was remarkable. I felt completely pampered throughout my stay."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">RS</div>
+          <div>
+            <div class="reviewer-name">Ruby Smith</div>
+            <div class="reviewer-role">Frequent Guest</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2 visible">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Traveling with young children is never easy, but Real Homes made every moment magical. The family suite was perfect and the staff went above and beyond to make us feel at home."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">JJ</div>
+          <div>
+            <div class="reviewer-name">Linda P. Joy</div>
+            <div class="reviewer-role">Family Guest</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SPECIAL OFFERS ===== -->
+<section class="offers-section" id="offers">
+  <div class="container">
+    <div class="section-header reveal visible">
+      <div>
+        <div class="section-eyebrow">Special Deals</div>
+        <h2 class="section-title">Indulge in Luxury for Less with Our Special Offers</h2>
+        <p class="section-subtitle">Take advantage of exclusive deals and make your dream getaway a reality at an unbeatable price.</p>
+      </div>
+      <div class="slider-controls">
+        <button class="slider-btn">‹</button>
+        <button class="slider-btn">›</button>
+      </div>
+    </div>
+    <div class="offers-grid reveal visible">
+      <div class="offer-card" onclick="showToast(&#39;Offer applied! Enjoy 30% off!&#39;)">
+        <img src="./Real Homes - Luxury Accommodation_files/photo-1520250497591-112f2f40a3f4" alt="Weekend Getaway">
+        <div class="offer-card-overlay"></div>
+        <div class="offer-tag">Save 30%</div>
+        <div class="offer-info">
+          <h3>Weekend Getaway Package</h3>
+          <p>2 nights + Breakfast + Spa access included</p>
+        </div>
+      </div>
+      <div class="offer-card" onclick="showToast(&#39;Family deal applied! Get the offer now.&#39;)">
+        <img src="./Real Homes - Luxury Accommodation_files/photo-1551882547-ff40c63fe5fa" alt="Family Vacation">
+        <div class="offer-card-overlay"></div>
+        <div class="offer-tag">Kids Free</div>
+        <div class="offer-info">
+          <h3>Family Vacation Deal</h3>
+          <p>Children under 12 stay &amp; eat free</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEARBY ===== -->
+<section class="nearby-section" id="nearby">
+  <div class="container">
+    <div class="reveal visible" style="margin-bottom:32px;">
+      <div class="section-eyebrow">Location</div>
+      <h2 class="section-title">What's Nearby</h2>
+    </div>
+    <div class="nearby-grid">
+      <div class="nearby-card reveal visible">
+        <h3>Distances from Hotel</h3>
+        <ul class="nearby-list">
+          <li class="nearby-item"><span class="nearby-place">🛍 Shopping Mall</span><span class="nearby-dist">0.3 km</span></li>
+          <li class="nearby-item"><span class="nearby-place">✈️ City Airport</span><span class="nearby-dist">12 km</span></li>
+          <li class="nearby-item"><span class="nearby-place">🏛 National Museum</span><span class="nearby-dist">2.1 km</span></li>
+          <li class="nearby-item"><span class="nearby-place">🚂 Train Station</span><span class="nearby-dist">1.5 km</span></li>
+          <li class="nearby-item"><span class="nearby-place">🏖 Beach</span><span class="nearby-dist">0.8 km</span></li>
+          <li class="nearby-item"><span class="nearby-place">🏥 Hospital</span><span class="nearby-dist">3.2 km</span></li>
+          <li class="nearby-item"><span class="nearby-place">🎭 Theatre</span><span class="nearby-dist">1.7 km</span></li>
+        </ul>
+      </div>
+      <div class="map-placeholder reveal reveal-delay-1 visible">
+        <div class="map-pin" style="top:45%;left:52%;"></div>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;background:white;padding:12px 20px;border-radius:10px;box-shadow:0 4px 16px rgba(0,0,0,0.1);">
+          <strong style="color:var(--dark);display:block;margin-bottom:4px;">📍 Real Homes Hotel</strong>
+          <span style="font-size:12px;color:var(--gray);">Prime city center location</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA + BOOKING ===== -->
+<section class="cta-section" id="booking">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="cta-left reveal visible">
+        <h2>Make Your Reservation Today and Create Lasting Memories</h2>
+        <p>Experience the ultimate in luxury and comfort. Book directly with us for the best rates guaranteed, exclusive perks, and personalized service.</p>
+        <div class="cta-features">
+          <div class="cta-feature">
+            <div class="cta-feature-icon">✓</div>
+            Best rate guarantee — no hidden fees
+          </div>
+          <div class="cta-feature">
+            <div class="cta-feature-icon">✓</div>
+            Free cancellation up to 48 hours before
+          </div>
+          <div class="cta-feature">
+            <div class="cta-feature-icon">✓</div>
+            Complimentary breakfast on direct bookings
+          </div>
+          <div class="cta-feature">
+            <div class="cta-feature-icon">✓</div>
+            24/7 concierge service
+          </div>
+        </div>
+      </div>
+      <div class="booking-form reveal reveal-delay-1 visible" id="contact">
+        <h3>Book Your Extraordinary Stay Today</h3>
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-input" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-input" placeholder="your@email.com">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Check In</label>
+            <input type="date" class="form-input">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Check Out</label>
+            <input type="date" class="form-input">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Adults</label>
+            <input type="number" class="form-input" placeholder="2" min="1" max="10">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Room Type</label>
+            <select class="form-input">
+              <option>Select room</option>
+              <option>Twin Room</option>
+              <option>Deluxe Room</option>
+              <option>Family Suite</option>
+              <option>Presidential Suite</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn-submit" onclick="handleBooking()">Confirm Reservation</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#" class="logo">
+          <div class="logo-icon">🏠</div>
+          Real Homes
+        </a>
+        <p class="footer-desc">Experience the pinnacle of luxury hospitality. Where every detail is crafted to perfection and every moment becomes a cherished memory.</p>
+        <div class="social-links">
+          <a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#" class="social-link">f</a>
+          <a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#" class="social-link">in</a>
+          <a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#" class="social-link">𝕏</a>
+          <a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#" class="social-link">▶</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#home">Home</a></li>
+          <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#about">About Us</a></li>
+          <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#suites">Our Suites</a></li>
+          <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#amenities">Amenities</a></li>
+          <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#offers">Special Offers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#">Room Service</a></li>
+          <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#">Spa &amp; Wellness</a></li>
+          <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#">Restaurant</a></li>
+          <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#">Event Hosting</a></li>
+          <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#">Airport Transfer</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#">📍 123 Luxury Avenue, NY</a></li>
+          <li><a href="tel:+18001234567">📞 +1 800 123 4567</a></li>
+          <li><a href="mailto:info@realhomes.com">✉ info@realhomes.com</a></li>
+          <li><a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#">🕐 Open 24/7</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Real Homes. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#">Privacy Policy</a>
+        <a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#">Terms of Service</a>
+        <a href="file:///D:/astro/New%20folder/luxury-hotel-website.html#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast Notification -->
+<div class="toast" id="toast">✓ Redirecting to booking...</div>
+
+<script>
+  // ===== NAVBAR SCROLL =====
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 40) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+
+  // ===== MOBILE MENU =====
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
+
+  // ===== SCROLL REVEAL =====
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Trigger count-up on stats
+        entry.target.querySelectorAll('.count-up').forEach(startCountUp);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ===== COUNT UP ANIMATION =====
+  const startedCounters = new Set();
+  function startCountUp(el) {
+    if (startedCounters.has(el)) return;
+    startedCounters.add(el);
+    const target = parseInt(el.dataset.target);
+    const duration = 1500;
+    const start = Date.now();
+    const tick = () => {
+      const elapsed = Date.now() - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(eased * target);
+      if (progress < 1) requestAnimationFrame(tick);
+      else el.textContent = target;
+    };
+    tick();
+  }
+
+  // ===== AMENITY TABS =====
+  function setAmenityTab(btn) {
+    document.querySelectorAll('.amenity-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  // ===== SUITE SLIDER =====
+  const suiteImages = [
+    ['https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80', 'Family Suite', 'From $299/night', '2 Bedrooms', 'Jacuzzi', 'Ocean View'],
+    ['https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80', 'Presidential Suite', 'From $899/night', '3 Bedrooms', 'Private Bar', 'Pool Access'],
+    ['https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80', 'Penthouse Suite', 'From $599/night', 'City View', 'Butler Service', 'Private Terrace'],
+  ];
+  let suiteOffset = 0;
+
+  function rotateSuites(dir) {
+    suiteOffset = (suiteOffset + dir + suiteImages.length) % suiteImages.length;
+    const cards = document.querySelectorAll('.suite-card');
+    cards.forEach((card, i) => {
+      const data = suiteImages[(suiteOffset + i) % suiteImages.length];
+      card.querySelector('img').src = data[0];
+      card.querySelector('.suite-name').textContent = data[1];
+      card.querySelector('.suite-price').textContent = data[2];
+      card.style.opacity = '0';
+      card.style.transform = 'translateX(' + (dir * 30) + 'px)';
+      setTimeout(() => {
+        card.style.transition = 'all 0.4s ease';
+        card.style.opacity = '1';
+        card.style.transform = 'translateX(0)';
+      }, 50);
+    });
+  }
+
+  // ===== TOAST =====
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = '✓ ' + msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3000);
+  }
+
+  // ===== BOOKING =====
+  function handleBooking() {
+    const name = document.querySelector('.booking-form input[type="text"]').value;
+    if (!name.trim()) {
+      showToast('Please enter your name to continue.');
+      return;
+    }
+    showToast('Booking confirmed! Confirmation sent to your email.');
+    document.querySelector('.booking-form').querySelectorAll('input, select').forEach(f => f.value = '');
+  }
+
+  // ===== SMOOTH SCROLL FOR ALL ANCHORS =====
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+
+</body></html>
